@@ -1,0 +1,90 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+<div class="container">
+    <form [formGroup]="stepForm" class="col-12"> 
+        <div class="row">
+            <div class="form-control col-md-6 col-sm-12">
+                <input  type="text" 
+                        placeholder="Nombre(s)*" 
+                        formControlName="nombre" 
+                        maxlength = 18
+                        [ngClass]="{'is-invalid' : (stepForm.get('nombre').touched || stepForm.get('nombre').dirty) && !stepForm.get('nombre').valid }"
+                        (change)="LeadDataChanged(); hideOrShowSelects()" onkeypress="return isLetterKey(event)" onpaste="return isLetterKey(event)">
+            </div>
+            <div class="form-control col-md-6 col-sm-12">
+                <input  type="text" 
+                        placeholder="Apellido paterno" 
+                        formControlName="paterno" 
+                        maxlength = 18
+                        [ngClass]="{'is-invalid' : (stepForm.get('paterno').touched || stepForm.get('paterno').dirty) && !stepForm.get('paterno').valid }"
+                        (change)="LeadDataChanged(); hideOrShowSelects()" onkeypress="return isLetterKey(event)" onpaste="return isLetterKey(event)">
+                <!-- <i class="fa fa-book"></i> -->
+            </div>
+            <div class="form-control col-md-6 col-sm-12">
+                <input  type="text" 
+                        placeholder="Apellido materno" 
+                        formControlName="materno" 
+                        maxlength = 18
+                        [ngClass]="{'is-invalid' : (stepForm.get('materno').touched || stepForm.get('materno').dirty) && !stepForm.get('materno').valid }"
+                        (change)="LeadDataChanged(); hideOrShowSelects()" onkeypress="return isLetterKey(event)" onpaste="return isLetterKey(event)">
+            </div>
+            <div class="form-control col-md-6 col-sm-12">
+                <input  type="text" 
+                        placeholder="Teléfono" 
+                        formControlName="telefono" 
+                        maxlength=10
+                        digitOnly
+                        [ngClass]="{'is-invalid' : (stepForm.get('telefono').touched || stepForm.get('telefono').dirty) && !stepForm.get('telefono').valid }"
+                        (change)="LeadDataChanged(); hideOrShowSelects()">
+            </div>
+            <div class="form-control col-md-6 col-sm-12">
+                <input  type="text" 
+                        placeholder="Email" 
+                        formControlName="correo" 
+                        maxlength = 55
+                        [ngClass]="{'is-invalid' : (stepForm.get('correo').touched || stepForm.get('correo').dirty) && !stepForm.get('correo').valid }"
+                        (change)="LeadDataChanged(); hideOrShowSelects()">
+            </div>
+            <div class="form-control col-md-6 col-sm-12">
+                <input  type="text" 
+                        digitOnly 
+                        placeholder="CP"
+                        maxlength = 5
+                        (keyup)="searchCP(); hideOrShowSelects()"
+                        [ngClass]="{'is-invalid' : (stepForm.get('cp').touched || stepForm.get('cp').dirty) && !stepForm.get('cp').valid }"
+                        formControlName="cp">
+                        <!-- <button (click)="searchCP()" >Comprobar CP</button> -->
+            </div>
+        </div>
+        <div *ngIf="showModels" class="row">
+            <div class="form-control col-md-6 col-sm-12">
+                <select class="form-select" formControlName="anio" (change)="marcaAnioSelected()">
+                    <option value="0" disabled [ngValue]="null">Seleccione un año</option>
+                    <option *ngFor="let anio of anios" value="{{anio}}">{{anio}}</option>
+                </select>
+                <i class="fa fa-chevron-down"></i>
+            </div>
+            <div class="form-control col-md-6 col-sm-12">
+                <select class="form-select" formControlName="marca" (change)="marcaAnioSelected()">
+                    <option value="0" disabled [ngValue]="null">Seleccione una marca</option>
+                    <option *ngFor="let marca of marcas" value="{{marca.CD_MARCA}}">{{marca.NM_MARCA}}</option>
+                </select>
+                <i class="fa fa-chevron-down"></i>
+            </div>
+            <div class="form-control col-md-6 col-sm-12">
+                <select class="form-select" formControlName="modelo">
+                    <option value="0" disabled [ngValue]="null">Seleccione un modelo</option>
+                    <option *ngFor="let modelo of modelos" value="{{modelo.CD_MODELO}}">{{modelo.NM_MODELO}}</option>
+                </select>
+                <i class="fa fa-chevron-down"></i>
+            </div>
+        </div>
+        <div class="navigation row">
+            <button [disabled]="!stepForm.valid"
+                    (click)='save()'>
+                Siguiente
+            </button>
+        </div>
+    </form>
+    
+</div>

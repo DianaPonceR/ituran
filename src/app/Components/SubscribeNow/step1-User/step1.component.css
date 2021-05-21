@@ -1,0 +1,41 @@
+.sex-control {
+    display: flex;
+    flex-direction: row;
+    /* height: 95px !important; */
+    align-items: center;
+    padding-left: 1%;
+    padding-right: 4%;
+}
+
+.sex-control input {
+    width: 5%;
+    margin-left: 25px;
+    margin-right: 5px;
+}
+
+.sex-control label {
+    color: white;
+    margin: 0;
+}
+
+.date-control input {
+    width: 62% !important;
+}
+
+.navigation {
+    padding: 0 6%;
+}
+
+@media only screen and (max-width: 1024px) {
+	
+}
+
+@media only screen and (max-width: 768px) {
+    .navigation {
+        padding: 0;
+    }
+}
+
+@media only screen and (max-width: 485px) {
+    
+}

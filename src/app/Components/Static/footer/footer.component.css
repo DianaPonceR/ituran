@@ -1,0 +1,133 @@
+.final_footer {
+    height: auto;
+    background-color: #04222d;
+    color: #ffffff;
+    text-align: center;
+    padding-bottom: 15px;
+    border-top: solid #01070a 1px;
+  }
+  
+  .final_section {
+    font-family: PFBeauSansPro;
+    font-weight: 100;
+    margin-top: 5%;
+  }
+  
+  .final_section span {
+    cursor: pointer;
+  }
+  
+  
+  .modal_body {
+    margin-top: 3%;
+    border-radius: 10px;
+    background-color: white;
+    max-width: 70%;
+  }
+  
+  .modal_info {
+    padding: 0;
+    margin: 0;
+    padding-top: 5%;
+    padding-left: 5%;
+    padding-bottom: 5%;
+    height: 450px;
+  }
+  
+  .modal_info h3 {
+    font-family: PFBeauSansPro;
+    font-size: 32px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.4;
+    letter-spacing: normal;
+    color: #1d3e89;
+  }
+  
+  .modal_info h4 {
+    margin-top: 5%;
+    font-family: PFBeauSansPro;
+    font-size: 18px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.4;
+    letter-spacing: normal;
+    color: #173e88;
+    margin-right: 2%;
+  }
+  
+  .txt_modal {
+    margin-top: 5%;
+    font-family: PFBeauSansPro;
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.4;
+    letter-spacing: normal;
+    color: #7b7f81;
+    text-align: justify;
+    margin-right: 5%;
+  }
+  
+  .strong_blue {
+    color: #173e88;
+  }
+  
+  .strong_green {
+    color: #97c93d;
+  }
+  
+  .modal_img {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .modal_img img {
+    width: 100%;
+    height: 575px;
+  }
+  
+  .cerrarModal {
+    width: 48px;
+    height: 48px;
+    box-shadow: 0 10px 30px 0 rgba(160, 196, 38, 0.5);
+    background-color: #97c93d;
+    border: none;
+    border-radius: 50%;
+    color: white;
+    position: absolute;
+    z-index: 55;
+    margin-left: -15%;
+    margin-top: 5%;
+    cursor: pointer;
+  }
+  
+  .linea {
+    width: 100%;
+    height: 5px;
+    border: solid 3px #97c93d;
+  }
+  @media only screen and (max-width: 900px) {
+    .final_footer {
+      height: auto;
+      text-align: left;
+      padding-bottom: 15px;
+    }
+    .world .col-md-2 {
+      width: 15%!important;
+    }
+    .desktop_view {
+      display: none;
+    }
+    .mobile_view {
+      display: block !important;
+      width: 100%;
+      padding-left: 45px;
+    }
+    .mobile_view a {
+      margin-left: 20px;
+    }
+  }

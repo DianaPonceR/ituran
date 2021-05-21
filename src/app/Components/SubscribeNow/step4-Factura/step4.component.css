@@ -1,0 +1,151 @@
+.step-1 {
+    width: 90%;
+    margin: auto;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.step-1 button {
+    height: 48px;
+    width: 230px;
+    margin: 0;
+    border-radius: 25px;
+    background-color: #ff9222;
+    color: white;
+    border-style: none;
+    transition: 0.3s;
+    font-family: PFBeauSansPro !important;
+    font-size: 10pt;
+}
+
+.step-3 {
+    width: 95%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+h3 {
+    font-size: 12pt;
+    margin-top: 20px;
+}
+
+.form-control.date-control {
+    width: 47%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 3%;
+}
+
+.date-control label {
+    padding-left: 5px;
+}
+
+.checkbox-card {
+    height: 80px !important;
+    border-color: white !important;
+    border-style: solid !important;
+    border-radius: 10px;
+    width: 31%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.checkbox-control label {
+    margin-left: 40px;
+    margin-right: 20px;
+    color: white !important;
+}
+
+.checkbox-control input {
+    width: 25px;
+    height: 25px;
+}
+
+
+.form-control.date-control {
+    width: 47%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 3%;
+    color: white;
+}
+
+.navigation {
+    padding: 0 5% !important;
+}
+
+.date-control input {
+    width: 60% !important;
+}
+
+@media only screen and (max-width: 1024px) {
+	.step {
+        width: 95%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+   
+    .checkbox-control label {
+        font-size: 10pt;
+        margin-left: 20px;
+        width: 150px;
+
+    }
+    .step {
+        width: 100%;
+    }
+    .step-1 {
+        width: 100%;
+    }
+    .step-3 {
+        width: 100%;
+        margin: 0;
+        justify-content: left;
+    }
+    .date-control input {
+        width: 70% !important;
+    }
+    .checkbox-card {
+        height: 110px !important;
+        width: 45%;
+        margin: 15px 15px;
+    }
+}
+
+@media only screen and (max-width: 485px) {
+    .form-title {
+        font-size: 12pt;
+    }
+    .step-1 button {
+        width: 140px;
+    }
+    
+    .step-3 {
+        flex-direction: column;
+    }
+    .step-3 .checkbox-control {
+        width: 100%;
+        height: 85px !important;
+    }
+    .checkbox-control label {
+        width: 240px;
+    }
+
+    .date-control {
+        width: 100% !important;
+    }
+}

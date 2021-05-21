@@ -1,0 +1,62 @@
+.container {
+    width: 100%;
+    display: flex;
+    /* background-color: #0D1521;
+    position: relative;
+    z-index: -1; */
+}
+
+.subscribe-now {
+    width: 100%;
+    max-width: 1440px;
+    margin: auto;
+    position: relative;
+    background-position: bottom;
+    background-size: cover;
+    padding-bottom: 30px;
+}
+
+.steps-output {
+    position: relative;
+}
+
+.progress-bar-container {
+    position: relative;
+}
+
+.bg-img {
+    position: absolute;
+    right: 0;
+    top: -30px;
+    width: 1440px;
+    z-index: -100;
+}
+
+.message {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.message h4 {
+    font-size: 30pt;
+    text-align: center;
+    margin: 60px 15%;
+}
+
+@media only screen and (max-width: 1024px) {
+	
+}
+
+@media only screen and (max-width: 768px) {
+    .message h4 {
+        font-size: 24pt;
+        margin: 30px 5%;
+    }
+}
+
+@media only screen and (max-width: 485px) {
+    .message h4 {
+        font-size: 18pt;
+    }
+}

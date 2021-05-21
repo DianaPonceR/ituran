@@ -1,1 +1,7 @@
-<router-outlet></router-outlet>
+<div class="loading" id="loader">
+    <img src="assets/images/load.gif" class="load_img view_desktop" alt="images">
+    <img src="assets/images/loadB.gif" class="load_img view_mobile" alt="images">
+  </div>
+<app-header></app-header>
+<router-outlet (activate)="onActivate($event)"></router-outlet>
+<app-footer></app-footer>

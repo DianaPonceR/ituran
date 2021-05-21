@@ -1,0 +1,178 @@
+/*@import '~bootstrap/dist/css/bootstrap.min.css';*/
+
+@font-face {
+    font-family: "PFBeauSansPro";
+    font-style: normal;
+    font-weight: normal;
+    src: local("?"), url("../../../../assets/fonts/PFBeauSansPro-SemiBold.ttf") format("truetype");
+}
+.iw-container {
+    width: 100%;
+    display: flex;
+    position: fixed;
+    z-index: 100;
+    background-color: #001b32;
+}
+
+.header {
+    width: 100%;
+    max-width: 1440px;
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    padding: 10px 0;
+    justify-content: space-around;
+    align-items: center;
+    height: 100px;
+    background-color: #001b32;
+}
+
+.header a:-webkit-any-link {
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+
+
+.logo-container {
+    padding: 0;
+}
+.logo-container img {
+    width: 130px;
+}
+
+.message-container {
+    width: 300px;
+}
+
+.message-container p {
+    font-size: 10pt;
+}
+
+.buttons-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.btn-separator {
+    width: 3px;
+    height: 40px;
+    margin: 5px 20px;
+    background-color: white;
+}
+
+button {
+    width:200px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: transparent;
+    color: white;
+    border-radius: 10px;
+    padding: 10px;
+    border-style: solid;
+    height: 60px;
+}
+
+button p {
+    margin: 0px auto;
+    font-size: 11pt;
+}
+
+button img{
+    width: 30px;
+    /* max-width:20%; */
+}
+
+a { 
+    text-decoration: none;
+}
+
+a p {
+    font-family: PFBeauSansPro !important;
+}
+
+.wa-button-container {
+}
+.btn-wa{
+    border-color: #6fb62f;
+    transition: 0.3s;
+}
+.btn-wa:hover {
+    background-color: #5bc400b7;
+    border-color: white;
+}
+
+.cc-button-container {
+}
+.btn-cc {
+    border-color: #01a5dd;
+    transition: 0.3s;
+}
+.btn-cc:hover {
+    background-color: #007096c5;
+    border-color: white;
+}
+
+.cc-icon-container {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.cc-icon-container div {
+}
+.cc-icon-container img {
+    max-width:100%;
+    max-height: 60px;
+    width: 30px;
+}
+
+
+
+@media only screen and (max-width: 1024px) {
+    button {
+        width:150px;
+    }
+    .logo-container img {
+        width: 150px;
+    }
+    .message-container {
+        width: 210px;
+    }
+    .message-container p {
+        font-size: 12pt;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .cc-icon-container {
+        display: none;
+    }
+    .message-container {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    .btn-cc p , .btn-wa p {
+        display: none;
+    }
+    .btn-wa, .btn-cc {
+        width: 60px;
+        height: 60px;
+        border-radius: 100%;
+        justify-content: center;
+    }
+    .btn-separator {
+        display: none;
+    }
+    .buttons-container {
+        width: 38%;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}

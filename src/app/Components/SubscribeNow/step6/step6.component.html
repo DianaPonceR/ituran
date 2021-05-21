@@ -1,0 +1,180 @@
+<div class="bg" [style.background-image]="'url(assets/images/flujo-bg.png'">
+    <div style="padding-top: 150px;"></div>
+    <app-progress-bar id="progressBar" [currentStep]='_userDataService.step'></app-progress-bar>
+    <div class="container">
+        <div class="step text-center" id="registrate">
+            <div class="row" style="width: auto;" id="completo">
+              <div class="col-md-12 text-center message-1">
+                <h1 class="form_title"><br><br>¡Felicidades! Ya tienes la tranquilidad de Ituran con Seguro.
+                <br>Confirma tu cita de instalación<br></h1>               
+              </div>
+              <div class="col-md-12 form_flujo">
+          
+                <div id="seleccionarLoja">
+                    <div id="mensjae_error" style="display: none; color: red;">
+                        <br>
+                        <h2>¡No se pudo registrar!</h2>
+                        <br>
+                        <p>Selecciona otro Centro de Servicio, Día u Horario.</p>
+                        <br><br>
+                      </div>
+                    
+                  <div class="row">
+                    <div class="col-md-12">
+                      <br><br>
+                      INSTALACIÓN <br> Centros de instalación cercanos a tu domicilio.
+                    </div>
+                  </div>
+          
+                  <br><br>
+          
+                  <div class="row" *ngIf="centros == null">
+                    <div class="col-md-12">
+                      <h4>No se han encontrado Centros de Servicio cerca</h4>
+                    </div>
+                  </div>
+          
+                  <div class="row" style="justify-content: leftspace-around;" *ngIf="centros != null">
+                    <div class="centro" *ngFor="let centro of centros">
+                      <div style="height: 45px; margin-top: 10px;">
+                        CENTRO: {{centro.LOJA.NOME_LOJA}}
+                      </div>
+                      <!--img src="assets/centros/{{centro.LOJA.CD_LOJA}}.png" *ngIf="centro.LOJA.NOME_LOJA == 'Tienda CONCACAF '" style="width: 90px; height: 90px;" alt="">
+                      <img src="assets/centros/{{centro.LOJA.CD_LOJA}}.png" *ngIf="centro.LOJA.NOME_LOJA != 'Tienda CONCACAF '" width="70%"  alt=""-->
+                      <div style="width: 100%; height: 100px;">
+                        <img src="assets/centros/{{centro.LOJA.NOME_LOJA}}.png" style="margin-bottom: 10px; max-height: 100%; max-width: 100%;"  alt="">
+                      </div>
+                      <p style="font-size: 12px; text-align: left; height: 126px; margin-bottom: 0;margin-top: 10px; padding-left: 40px;">
+                        Calle {{centro.LOJA.NM_BAIRRO}} <br> No. {{centro.LOJA.NR_NUMERO}} <br>
+                        Col. {{centro.LOJA.NM_ENDERECO}}, <br>
+                        {{centro.LOJA.NM_CIDADE}}, <br> 
+                        CP: {{centro.LOJA.NR_CEP}}
+                      </p>
+                      <br>
+                      <button class="btn btnSelect" (click)="selectCentro(centro.LOJA.CD_LOJA)">Seleccionar</button>
+                    </div>
+                  </div>
+          
+                  
+                  
+                  <!--FORMULARIO FACTURA-->
+                  <div class="container" id="select_horario">
+                    <br><br>
+                    <div class="row" id="formPerfilRow">
+                      <div class="col-md-1"></div>
+                      <div class="col-md-10 step_form">
+                        <button class="btn btn-primary form_step2" style="background-color: transparent;" type="button">
+                          INSTALACIÓN
+                        </button>
+                        <div class="collapse show" id="formFactura">
+                          <div *ngFor="let centro of centros">
+                            <img style="width: 20%; margin: auto;" src="assets/centros/{{centro.LOJA.NOME_LOJA}}.png" *ngIf="centro.LOJA.CD_LOJA == id_selected" width="70%"  alt="">
+                          </div>
+                          <div class="card card-body">
+                            <form>
+                              <div class="row" *ngFor="let centro of centros">
+                                <div class="col-md-6 form-control" *ngIf="centro.LOJA.CD_LOJA == id_selected">
+                                  <select style="padding-left: 15px;" name="" id="sdia"  class="form-select"
+                                          (change)="setHorarios(centro.DATAS_HORAS)"
+                                          [(ngModel)]="dia_selected" [ngModelOptions]="{standalone: true}">
+                                    <option value="0" disabled>Selecciona un día</option>
+                                    <option *ngFor="let dia of centro.DATAS_HORAS" value="{{dia.Data}}">{{dia.Data}}</option>
+                                  </select>
+                                  <i class="fa fa-chevron-down"></i>
+                                  <!-- <img src="assets/flujo/anio.png" class="ico_input" alt=""> -->
+                                </div>
+                                <div class="col-md-6 form-control" *ngIf="centro.LOJA.CD_LOJA == id_selected">
+                                  <select style="padding-left: 15px;" name="" id="shora"  class="form-select"
+                                    [(ngModel)]="hora_selected" [ngModelOptions]="{standalone: true}">
+                                    <option value="0" disabled>Selecciona una hora </option>
+                                    <option *ngFor="let hora of data_selected" value="{{hora.NR_PERIODO}}">{{hora.DT_HORARIO}}</option>
+                                  </select>
+                                  <i class="fa fa-chevron-down"></i>
+                                  <!-- <img src="assets/flujo/hora.png" class="ico_input" alt=""> -->
+                                </div>
+                              </div>
+                              <div class="row space_form">
+                                <div class="navigation col-6" style="margin-left: auto; padding: 0 6%;" >
+                                  <button class="btn btnContinua" (click)="validar_horario()">
+                                    Continuar <img src="assets/icons/continua.svg" alt="">
+                                  </button>
+                                </div>
+                              </div>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-1"></div>
+                    </div>
+                  </div>
+                  <!--FIN FORMULARIO FACTURA-->
+          
+                  <br><br>
+          
+                  <div class="row">
+                    <div class="col-md-12">
+                      Ingrese otro código postal para buscar otro centro de instalación.
+                    </div>
+                    <div class="col-md-12 row" style="justify-content: center; margin-top: 20px;">
+                        <div class="col-md-6 row cp-div">
+                            <div class="col-md-8 col-sm-12">
+                                <input type="text" class="" 
+                                      style="width: 100%;"      
+                                      name="" id="" placeholder="Código Postal"
+                                      maxlength="5" onkeypress="return isNumberKey(event)"
+                                      [(ngModel)]="search_cp" [ngModelOptions]="{standalone: true}">
+                                <!-- <img src="assets/flujo/cp.png" class="ico_input" alt=""> -->
+                            </div>
+                            <div class="col-md-4 col-sm-12">
+                            <button class="btn btnSelect" (click)="getCentros()" style="height: 100%; width: 100%;">Buscar</button>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+          
+                <div id="mensjae_exito" style="display: none;">
+                    <br>
+                    <h2>CITA CONFIRMADA</h2>
+                    <br>
+                    <p>Has finalizado la contratación de Ituran, asiste a la hora seleccionada para la instalación del dispositivo de rastreo.</p>
+                    <br>
+                      
+                    <div class="navigation">
+                    <button class="btn btnContinua" style="margin: auto;" (click)="finalizar()">Finalizar</button>
+                    </div>
+                      
+                </div>
+          
+                <!--FIN FORMULARIO DE STEP-->
+              </div>
+              <div class="col-md-3"></div>
+            </div>
+          
+            
+            <div class="row" id="mensaje_error2" style="display: none;">
+              <div class="col-md-12 text-center">
+                <!--MENSAJE DE ERROR-->
+                <div class="mensajeError">
+                  <br><br><br><br>
+                  <h2>NO PODEMOS CONTINUAR <br> CON EL REGISTRO</h2>
+                  <br>
+                  <h5>Contactanos al <a href="tel:+528009119898">800 911 9898</a> para continuar con tu registro.</h5>
+                  <br>
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-md-4"></div>
+                      <div class="col-md-4">
+                        <button class="btn btnContinua" (click)="finalizar()">Finalizar</button>
+                      </div>
+                      <div class="col-md-4"></div>
+                    </div>
+                  </div>
+                </div>
+                <!--FIN MENSAJE DE ERROR-->
+              </div>
+            </div>
+          
+          </div>
+    </div>
+</div>

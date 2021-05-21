@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="static-component">
+      <!-- <div class="col-md-12 text-center">
+        <h1>Ituran es líder a nivel mundial en recuperación vehicular</h1>
+        <img src="assets/info/data.png" class="w-100" alt="">
+      </div> -->
+      <div class="col-md-12 text-center watch">
+        <img src="assets/icon/vconoce.png" id="play-video" alt="" (click)="reproducir()" *ngIf="reproductor == false">
+        <div class="reproductor" *ngIf="reproductor == true">
+          <iframe src="https://www.youtube.com/embed/tYuoNRbFaIY?rel=0" id="video_ituran" controls="false" class="video_ituran" frameborder="0"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,1 +1,45 @@
-<p>lead works!</p>
+<!-- <div class="container">
+    <div class="left-space">
+
+    </div> -->
+    <div class="card">
+        <form [formGroup]="stepForm" class="lead-form">
+            <label>¿Quieres una atención personalizada?</label>
+            <p>Nosotros te contactamos</p>
+            <input  
+                formControlName="nombre" type="text" 
+                onkeypress="return isLetterKey(event)" 
+                onpaste="return isLetterKey(event)"    
+                placeholder="Nombre*"
+                [ngClass]="{'is-invalid' : (stepForm.get('nombre').touched || stepForm.get('nombre').dirty) && !stepForm.get('nombre').valid }"
+                >
+            <input  formControlName="telefono" 
+                    type="text" placeholder="Teléfono*"
+                    digitOnly
+                    maxlength=10
+                    [ngClass]="{'is-invalid' : (stepForm.get('telefono').touched || stepForm.get('telefono').dirty) && !stepForm.get('telefono').valid }"
+                    >
+            <input  formControlName="correo" 
+                    type="text" 
+                    maxlength=55
+                    placeholder="Correo electrónico"
+                    [ngClass]="{'is-invalid' : (stepForm.get('correo').touched || stepForm.get('correo').dirty) && !stepForm.get('correo').valid }"
+                    >
+            <span><a>Consulta nuestra política de privacidad</a></span>
+            <button
+                    (click)="sendLead()"
+                    >
+                    ¡CONTACTAR AHORA!
+            </button>
+            <!-- <div class="form-control">
+                <select>
+                        <option>hey</option>
+                        <option>hey</option>
+                        <option>hey</option>
+                </select>
+            </div> -->
+            
+            <span>Datos 100% protegidos</span>
+        </form>
+    </div>
+<!-- </div> -->

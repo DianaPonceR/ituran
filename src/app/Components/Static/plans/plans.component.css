@@ -1,0 +1,286 @@
+.general-1 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.general-1 h4 {
+    text-align: center;
+    font-size: 29pt;
+    width: 80%;
+    margin-top: 60px;
+    color: #80b447;
+}
+
+.general-1 p {
+    text-align: center;
+    width: 80%;
+    font-size: 14pt;
+    margin-top: 40px;
+}
+
+.general-1 p span {
+    color: #46a6dd;
+}
+
+/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip-card {
+    background-color: transparent;
+    width: 100%;
+    height: 570px;
+    /* border: 1px solid #8b8b8b; */
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+    border-radius: 50px;
+    background-position: bottom;
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 50px;
+    border: 1px solid #8b8b8b;
+    color: white;
+    background-color: rgba(6,69,96,0.5);
+    transform: rotateX(0deg)
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+    
+}
+
+p.front-p {
+    font-size: 9pt;
+    width: 90%;
+    height: 85px;
+    color: rgb(226, 226, 226);
+}
+
+.front-p strong {
+    color: white;
+}
+
+.front-p span.green-price {
+    color: #80b447;
+}
+
+.front-p span.blue-price {
+    color: #46a6dd;
+}
+
+/* Style the back side */
+.flip-card-back {
+    
+    transform: rotateY(180deg);
+}
+
+.iw-container {
+    width: 100%;
+    background-color: #0b131b;
+    display: flex;
+}
+
+.static-component {
+    width: 100%;
+    max-width: 1440px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    padding-bottom: 60px;
+    background-position: right;
+}
+
+.cards {
+    width: 100%;
+    max-width: 1440px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    position: relative;
+    flex-wrap: wrap;
+}
+
+.card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 28%;
+}
+
+.flip-card-inner .plan-logo {
+    height: 130px;
+    margin-top: 30px;
+}   
+
+.plan-logo img {
+    width: 120px;
+}
+
+.plan-desc {
+    margin-top: 30px;
+    font-size: 12pt;
+    width: 80%;
+    margin-bottom: 30px;
+}
+
+.plan-tag {
+    display: flex;
+    flex-direction: row;
+    background-color: #80b447;
+    width: 150px;
+    font-size: 8pt;
+    justify-content: space-around;
+    align-items: center;
+    height: 40px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.plan-tag img {
+    width: 100%;
+    height: fit-content;
+}
+.plan-tag p {
+    width: 100px;
+    margin: 0;
+}
+
+.plan-tags {
+    display: flex;
+    flex-direction: column;
+}
+
+.price-tag {
+    background-color: #479acd;
+    color: white;
+    border-radius: 20px;
+    border-style: none;
+    margin-bottom: 30px;
+    height: 100px;
+    width: 100%;
+    transition: 0.3s;
+    font-size: 21pt;
+    padding: 0 5%;
+}
+.price-tag:hover {
+    background-color: #77c6f7;
+}
+.price-tag-best {
+    background-color: #ff9222;
+}
+.price-tag-best:hover {
+    background-color: #ffa54b;
+}
+
+.chubb-icon {
+    width: 70px;
+    height: 15px;
+    display: inline-block;
+}
+.chubb-icon img {
+    width: 100%;
+}
+
+.hdi-icon {
+    width: 25px;
+    height: 15px;
+    display: inline-block;
+}
+.hdi-icon img {
+    width: 100%;
+}
+.plan-desc div {
+    /* background-image: url('//assets/icons/hdi_bw.png'); */
+    /* background-size: contain; */
+    width: 30px;
+    height: 15px;
+}
+/* .span-hdi img {
+    width: 100%;
+} */
+.text-back-arr {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.text-back-arr p {
+    height: auto;
+
+}
+
+
+
+@media only screen and (max-width: 1024px) {
+	.general-1 h4 {
+        font-size: 26pt;
+    }
+    .general-1 p {
+        font-size: 16pt;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .card-container {
+        width: 45%;
+    }
+    .card-container:nth-child(3) {
+        margin-top: 60px;
+    }
+    .general-1 {
+        margin-bottom: 60px;
+    }
+    .general-1 p {
+        margin-top: 20px;
+    }
+    /* .plan-tags {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    } */
+    /* .flip-card {
+        height: 600px;
+    } */
+}
+
+@media only screen and (max-width: 485px) {
+    .card-container {
+        width: 85%;
+    }
+    .card-container:nth-child(2) {
+        margin-top: 60px;
+    }
+    .general-1 h4 {
+        font-size: 18pt;
+    }
+    .general-1 p {
+        font-size: 10pt;
+    }
+}

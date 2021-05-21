@@ -1,0 +1,103 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+<div class="bg" [style.background-image]="'url(assets/images/flujo-bg.png'">
+    <div style="padding-top: 150px;"></div>
+    <app-progress-bar id="progressBar" [currentStep]='_userDataService.step'></app-progress-bar>
+    <div class="container">
+        <!-- <div class="step" [style.background-image]="'url(assets/images/flujo-bg.png'"> -->
+        <form [formGroup]="stepForm" class=""> 
+            <div class="row"> 
+                <div class="form-control col-md-4 col-sm-12">
+                    <input  type="text" placeholder="PLACA" 
+                            formControlName="placa"
+                            maxlength=7
+                            onkeypress="return check(event)"
+                            [ngClass]="{'is-invalid' : (stepForm.get('placa').touched || stepForm.get('placa').dirty) && !stepForm.get('placa').valid }"
+                            >
+                </div>
+                <div class="form-control vin-form-control col-md-8 col-sm-12">
+                    <input  type="text" placeholder="NÚMERO DE SERIE (VIN)" 
+                            formControlName="vin"
+                            maxlength = 18
+                            onkeypress="return check(event)"
+                            [ngClass]="{'is-invalid' : (stepForm.get('vin').touched || stepForm.get('vin').dirty) && !stepForm.get('vin').valid }"
+                            >
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-control col-md-4 col-sm-12">
+                    <input  type="text" placeholder="Contacto de emergencia" 
+                            maxlength="50" 
+                            onkeypress="return isLetterKey(event)" 
+                            onpaste="return isLetterKey(event)"
+                            formControlName="contacto1"
+                            [ngClass]="{'is-invalid' : (stepForm.get('contacto1').touched || stepForm.get('contacto1').dirty) && !stepForm.get('contacto1').valid }"
+                            >
+                </div>
+                <div class="form-control col-md-4 col-sm-12">
+                    <input  type="text" placeholder="Teléfono" 
+                            formControlName="telefonoc1"
+                            digitOnly
+                            [ngClass]="{'is-invalid' : (stepForm.get('telefonoc1').touched || stepForm.get('telefonoc1').dirty) && !stepForm.get('telefonoc1').valid }"
+                            maxlength=10
+                            >
+                </div>
+                <div class="form-control col-md-4 col-sm-12">
+                    <select formControlName="parentezco1" [ngClass]="{'is-invalid' : (stepForm.get('parentezco1').touched || stepForm.get('parentezco1').dirty) && !stepForm.get('parentezco1').valid }">
+                        <option value="0" disabled [ngValue]="null">Parentesco</option>
+                        <option value="Pareja">Pareja</option>
+                        <option value="Hij@">Hij@</option>
+                        <option value="Padre">Padre</option>
+                        <option value="Madre">Madre</option>
+                        <option value="Amig@">Amig@</option>
+                        <option value="Otro">Otro</option>
+                    </select>
+                    <!-- <input  type="text" placeholder="Parentesco" 
+                            formControlName="parentezco1"
+                            [ngClass]="{'is-invalid' : (stepForm.get('parentezco1').touched || stepForm.get('parentezco1').dirty) && !stepForm.get('parentezco1').valid }"
+                            > -->
+                    <i class="fa fa-chevron-down"></i>
+                </div>
+                <div class="form-control col-md-4 col-sm-12">
+                    <input  type="text" placeholder="Contacto opcional" 
+                            maxlength="50" 
+                            onkeypress="return isLetterKey(event)" 
+                            onpaste="return isLetterKey(event)"
+                            formControlName="contacto2"
+                            [ngClass]="{'is-invalid' : (stepForm.get('contacto2').touched || stepForm.get('contacto2').dirty) && !stepForm.get('contacto2').valid }"
+                            >
+                </div>
+                <div class="form-control col-md-4 col-sm-12">
+                    <input  type="text" placeholder="Teléfono" 
+                            formControlName="telefonoc2"
+                            digitOnly
+                            [ngClass]="{'is-invalid' : (stepForm.get('telefonoc2').touched || stepForm.get('telefonoc2').dirty) && !stepForm.get('telefonoc2').valid }"
+                            maxlength=10
+                            >
+                </div>
+                <div class="form-control col-md-4 col-sm-12">
+                    <select formControlName="parentezco2" [ngClass]="{'is-invalid' : (stepForm.get('parentezco2').touched || stepForm.get('parentezco2').dirty) && !stepForm.get('parentezco2').valid }">
+                        <option value="0" disabled [ngValue]="null">Parentesco</option>
+                        <option value="Pareja">Pareja</option>
+                        <option value="Hij@">Hij@</option>
+                        <option value="Padre">Padre</option>
+                        <option value="Madre">Madre</option>
+                        <option value="Amig@">Amig@</option>
+                        <option value="Otro">Otro</option>
+                    </select>
+                    <!-- <input  type="text" placeholder="Parentesco" 
+                            formControlName="parentezco2"
+                            [ngClass]="{'is-invalid' : (stepForm.get('parentezco2').touched || stepForm.get('parentezco2').dirty) && !stepForm.get('parentezco2').valid }"
+                            > -->
+                    <i class="fa fa-chevron-down"></i>
+                </div>
+            </div>
+            <div class="navigation"> 
+                <button (click)='prev()'>Anterior</button>
+                <button [disabled]="!stepForm.valid" (click)='save()'>Siguiente</button>
+            </div>
+        </form>
+        <!-- </div> -->
+    </div>
+
+</div>

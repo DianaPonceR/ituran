@@ -1,0 +1,67 @@
+<div class="bg" [style.background-image]="'url(assets/images/flujo-bg.png'">
+    <div style="padding-top: 150px;"></div>
+    <app-progress-bar id="progressBar" [currentStep]='_userDataService.step'></app-progress-bar>
+    <div class="container">
+        <div class="step">
+            <div class="step-1">
+                <div class="cliente-col">
+                    <h4>DATOS DEL CLIENTE</h4>
+                    <p>NOMBRE: {{_userDataService.userDataModel.inicial.nombreCompleto}}</p>
+                    <p>FECHA DE NACIMIENTO: {{_userDataService.userDataModel.cliente.nacimiento | date: 'dd/MM/yyyy'}}</p>
+                    <p>RFC: {{_userDataService.userDataModel.cliente.rfc}}</p>
+                    <p>SEXO: {{_userDataService.userDataModel.cliente.sexo}}</p>
+                    <p>TELÉFONO: {{_userDataService.userDataModel.inicial.telefono}}</p>
+                    <p>CORREO: {{_userDataService.userDataModel.inicial.correo}}</p>
+                    <p>DIRECCIÓN: </p>
+                    <p>{{_userDataService.userDataModel.cliente.direccion}}</p>
+                </div>
+                <div class="vehicle-col">
+                    <h4>DATOS DEL VEHÍCULO</h4>
+                    <p>{{_userDataService.userDataModel.inicial.marcaStr}} {{_userDataService.userDataModel.inicial.anio}}</p>
+                    <p>{{_userDataService.userDataModel.inicial.modeloStr}}</p>
+                    <p>VIN: {{_userDataService.userDataModel.vehiculo.vin}}</p>
+                    <h4>CONTACTO DE EMERGENCIA</h4>
+                    <p>NOMBRE: {{_userDataService.userDataModel.vehiculo.contacto1}}</p>
+                    <p>TELÉFONO: {{_userDataService.userDataModel.vehiculo.telefonoc1}}</p>
+                </div>
+            </div>
+            <div class="step-2">
+                <form [formGroup]="stepForm" class="step-form"> 
+                    <div class="step-form-1">
+                        <div class="checkbox-control">
+                            <p>¿Deseas facturar?</p>
+                            <label for="facturar">Sí, deseo facturar</label>
+                            <input id="facturar" type="checkbox" formControlName="facturar">
+                        </div>
+                    </div>
+                    <div class="step-form-1">
+                        <div class="">
+                            <h3>IMPORTE</h3>
+                        </div>
+                    </div>
+                    <div *ngIf="importesLoaded" class="step-form-2"> 
+                        <div *ngIf="importes.includes('vehiculoParticular')" class="checkbox-card">
+                            <label for="vehiculoParticular">Mi vehículo es de uso particular sin fines de lucro</label>
+                            <input id="vehiculoParticular" type="checkbox" formControlName="vehiculoParticular">
+                        </div>
+                        <div class="checkbox-card">
+                            <label for="vehiculoSinSiniestro">Mi vehículo NO tiene ningún siniestro por reclamar</label>
+                            <input id="vehiculoSinSiniestro" type="checkbox" formControlName="vehiculoSinSiniestro">
+                        </div>
+                        <div class="checkbox-card" >
+                            <label for="terminosCondiciones">Términos y condiciones</label>
+                            <input id="terminosCondiciones" type="checkbox" formControlName="terminosCondiciones">
+                        </div>
+                    </div>
+                    <div class="navigation">
+                        <button (click)="prev()">Anterior</button>
+                        <button [disabled]="!stepForm.valid" (click)="save()">Siguiente</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+
+
+</div>

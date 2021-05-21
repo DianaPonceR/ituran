@@ -1,0 +1,137 @@
+.load_img {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .centro {
+    border: solid 1px;
+    border-radius: 10px;
+    width: 28%;
+    margin: 20px 2%;
+    background-color: rgba(14, 70, 101, 0.5);
+    transition: 0.3s;
+  }
+
+  .centro:hover {
+    transform: scale(1.1);
+  }
+  
+  .btnSelect {
+    border-radius: 8px;
+    background-color: #97c93d;
+    color: #ffffff;
+    width: 80%;
+    margin-bottom: 10px;
+  }
+  
+  .step_form {
+    background-color: rgba(14, 70, 101, 0.5);
+    border: solid #173e88 1px;
+    border-radius: 8px;
+  }
+  
+  .step_form button {
+    width: 100%;
+    background-color: rgba(14, 70, 101, 0.5);
+    border: none;
+    height: 50px;
+    color: white;
+    background-color: #97c93d;
+  }
+  
+  .card {
+    width: 100%;
+    background-color: transparent;
+    border: none;
+  }
+  
+  .message-1 h1 {
+    font-size: 18pt;
+  }
+  
+  @media only screen and (max-width: 900px) {
+    .load_img {
+      width: 90%;
+      height: 70%;
+      margin-left: 5%;
+      margin-top: 20%;
+    }
+  
+  
+    .centro {
+      width: 80% !important;
+      margin-left: 10%;
+      margin-bottom: 15px;
+      text-align: center;
+      padding-bottom: 7px;
+      padding-top: 5px;
+    }
+    .centro img {
+      margin-bottom: 10px !important;
+    }
+    .centro div {
+      height: 30px !important;
+    }
+    .centro p {
+      height: auto !important;
+    }
+    .centro div:nth-child(1) {
+        font-size: 10pt;
+    }
+
+    .step {
+        width: 80%;
+        max-width: 1440px;
+        margin: auto;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-position: bottom;
+        background-size: cover;
+    }
+  }
+  
+  @media only screen and (min-width: 1600px){
+    hr {
+      margin-top: 35px;
+    }
+    .list_step_flow P {
+      margin-top: 75px;
+    }
+  }
+  
+  @media only screen and (min-width: 1900px){
+    hr {
+      margin-top: 45px;
+    }
+    .list_step_flow P {
+      margin-top: 95px;
+    }
+  }
+
+@media only screen and (max-width: 1024px) {
+	
+}
+
+@media only screen and (max-width: 768px) {
+    .cp-div {
+        width: 100% !important;
+        max-width: 100%;
+        flex: auto;
+    }
+
+    .centro div:nth-child(1) {
+        font-size: 8pt;
+    }
+}
+
+@media only screen and (max-width: 485px) {
+    .centro {
+        width: 100;
+    }
+
+    .cp-div div:nth-child(1) {
+        margin-bottom: 20px;
+    }
+}

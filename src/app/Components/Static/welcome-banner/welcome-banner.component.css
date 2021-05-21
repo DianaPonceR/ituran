@@ -1,0 +1,125 @@
+.iw-container {
+    width: 100%;
+    display: flex;
+    padding-top: 110px;
+    background-color: #031222;
+}
+
+.banner {
+    width: 100%;
+    max-width: 1440px;
+    margin: auto;
+    position: relative;
+}
+
+.iw-container img {
+    width: 100%;
+}
+
+.lead-container {
+    position: absolute;
+    right: 0;
+    top: 15%;
+    width: 100%;
+}
+
+
+/* #contaianer {
+	position: absolute;
+	width: 100vw;
+	height: 100vh;
+	top: 0;
+	left: 0;
+	background-color: #000;
+	overflow: hidden;
+	font-family: 'Lato', sans-serif;
+}
+#wrapper {
+	overflow: hidden;
+	position:absolute;
+	width: 1500px;
+	height: 800px;
+	z-index:10;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	
+}
+
+#wrapper div { 
+    position:absolute;
+    background-position: center center;
+    background-size: cover;
+}
+
+.p1{
+	width: 1776px;
+	height: 1183px;
+	z-index:6;
+	background-image: url('//caraujo_pens.surge.sh/images/S6WCriT.jpg');
+	left: -89px;
+	top: -191px;
+	
+}
+.p2{
+	width: 927px;
+	height: 854px;
+	z-index:8;
+	background-image: url('//caraujo_pens.surge.sh/images/aeffA4C.png');
+	left:-83px;
+	top: 169px;
+	
+}
+.p3{
+	width: 1082px;
+	height: 729px;
+	z-index:10;
+	background-image: url('//caraujo_pens.surge.sh/images/QAyjA6B.png');
+	left: 718px;
+	top: 136px;
+	
+}
+.letra{
+	font-weight: 900;
+	color: #24395A;
+	font-size: 280/16em;
+	top: 30%;
+	margin-top: -115px;
+	width: 100%;
+	text-align: center;
+	z-index: 7;
+	text-transform: uppercase;
+} */
+
+
+@media only screen and (max-width: 1024px) {
+	.iw-container img {
+		position: relative;
+		right: 25px;
+	}
+	.lead-container {
+		top: 10%;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	.lead-container {
+		position: relative;
+	}
+	.iw-container img {
+		margin: 0px 0px 0px 0px;
+		right: 0;
+		width: 145%;
+	}
+	.img-container {
+		width: 100%;
+		overflow: hidden;
+	}
+}
+
+@media only screen and (max-width: 425px) {
+	/* .img-container {
+		height: 400px;
+    	background-size: 160%;
+	} */
+}

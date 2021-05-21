@@ -1,0 +1,77 @@
+<div class="bg" [style.background-image]="'url(assets/images/flujo-bg.png'">
+  <div style="padding-top: 150px;"></div>
+  <app-progress-bar id="progressBar" [currentStep]='_userDataService.step'></app-progress-bar>
+  <div class="container">
+    <div *ngIf="showStart" class="step">
+      <h3>PAGO</h3>
+      <div class="step-1">
+          <div class="card">
+            <p>Concepto: </p>
+            <p>Servicio de instalación</p>
+          </div>
+          <div class="card">
+            <p>Total (MXN)</p>
+            <p>$199.00</p>
+          </div>
+      </div>
+      <p class="metodos-pago">Seleccionar método de pago</p>
+      <div class="step-2">
+        <button (click)="setPago(1)">Tarjeta de crédito o débito<img src="assets/icons/to_contrata.png"></button>
+        <button (click)="setPago(2)">Pago en Oxxo<img src="assets/icons/to_contrata.png"></button>
+      </div>
+      <p class="final-note">Recuerda que sólo realizarás en este momento 
+        el pago de servicio de instalación por $199 pesos.</p>
+      <p class="final-note">Una vez instalado el dispositivo GPS y estés protegido
+        por Ituran con Seguro, comenzará el 
+        cargo mensual de $349 pesos.</p>
+    </div>
+    <div *ngIf="pagando" class="step">
+      <div class="row">
+        <div style="font-size: 20pt;margin-top: 30px;" class="col-12">
+          <h2>COMPLETA TU PAGO EN EL ENLACE PROPORCIONADO</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <p>Una vez realizado tu pago presiona el botón Continuar.</p>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="col-12 navigation">
+          <button (click)="continuar()" style="margin: auto;">Continuar</button>
+        </div>
+      </div>
+      <div class="row">
+        <h4 style="color: red;" *ngIf="status_msg != null">{{status_msg}}</h4>
+      </div>
+      <div class="row" style="margin-top: 20px;">
+        <div class="col-12">
+          <p>Si no puedes ver el enlace desactiva cualquier bloqueador de ventanas emergentes de tu navegador y abre el enlace de nuevo.</p>
+        </div>
+        <div class="col-12 navigation">
+          <button (click)="openLink()" style="margin: auto;background-color: rgb(128, 180, 71);">Abrir enlace</button>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="showOxxoMssg" class="step">
+      <div class="row">
+        <div style="font-size: 20pt;margin-top: 30px;" class="col-12">
+          <h2>REALIZA TU PAGO EN EL OXXO MÁS CERCANO</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <p>En cuanto recibamos el pago nos comunicaremos contigo para agendar la cita de instalación.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <p style="text-align: center;">Recuerda que sólo tienes los próiximos 5 días para hacer le pago.</p>
+        </div>
+        <div class="col-12 navigation">
+          <button (click)="finalizar()" style="margin: auto;">Finalizar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

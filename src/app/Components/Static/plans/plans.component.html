@@ -1,0 +1,188 @@
+<div class="iw-container">
+    <div [style.background-image]="'url(assets/images/general-bg.png'" class="static-component col-12">
+        <div class="general-1 row">
+            <h4>¿Porqué Ituran es la alternativa ideal para ti?</h4>
+            <p>Ituran es un servicio de <span>localización, recuperación, robo total de automóvil* y daños a terceros,<br></span> a un precio accesible y sin plazos forzosos.</p>
+        </div>
+        <div class="cards row">
+            <!-- <div *ngFor="let card of planCards" class="card-container">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div class="plan-logo">
+                                <img src="{{card.imgUrl}}">
+                            </div>
+                            <p [innerHTML]="card.textFront" class="plan-desc"></p>
+                            <div class="plan-tags">
+                                <div *ngFor="let tag of card.serviceTags" class="plan-tag">
+                                    <img src="{{tag.imgUrl}}" alt="">
+                                    <p [innerHTML]="tag.text"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flip-card-back">
+                            <div class="plan-logo">
+                                <img src="{{card.imgUrl}}">
+                            </div>
+                            <div class="text-back-arr">
+                                <p [innerHTML]="t" *ngFor="let t of card.textBack"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="price-tag" 
+                        [ngClass]="card.price === 395 ? 'price-tag-best' : ''"
+                        (click)="goTo('contratarAhora')">
+                    Contratar ahora por ${{card.price}}
+                </button>
+            </div> -->
+            <div class="card-container">
+                <button class="price-tag" 
+                        (click)="goTo('contratarAhora')">
+                        CONTRATAR AHORA POR $339
+                </button>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div class="plan-logo">
+                                <img src="assets/images/ituranProteccion.png">
+                            </div>
+                            <p class="front-p"><strong>Servicio de localización y recuperación vehicular.</strong> 
+                                 Si llegaras a sufrir un robo total del vehículo, recuperamos el automóvil
+                                 hasta en 48 horas*. Con un precio de <span class="green-price">$339</span> al mes.</p>
+                            <div class="plan-tags">
+                                <div class="plan-tag">
+                                    <img src="assets/images/tag_gps.png" alt="">
+                                </div>
+                                <div class="plan-tag">
+                                    <img src="assets/images/tag_asistencia.png" alt="">
+                                </div>
+                                <div class="plan-tag">
+                                    <img src="assets/images/tag_app.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flip-card-back">
+                            <div class="plan-logo">
+                                <img src="assets/images/ituranProteccion.png">
+                            </div>
+                            <div class="text-back-arr">
+                                <p class="front-p"><strong>Ituran Protección</strong> es <strong>únicamente</strong> un servicio de localización y 
+                                    <strong>recuperación</strong>  vehicular.</p>
+                                <p class="front-p">Si llegaras a sufrir un percance de robo total de tu auto, y por alguna razón no lo pudiéramos recuperar, te <strong>indemnizamos con el 10%</strong> del valor comercial del mismo. <br>(Hasta por $20,000).</p>
+                                <p class="front-p">La tasa de recuperación del vehículo es del 80%.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-container">
+                <button class="price-tag" 
+                        (click)="goTo('contratarAhora')">
+                        CONTRATAR AHORA POR $349
+                </button>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div class="plan-logo">
+                                <img src="assets/images/ituranConSeguro.png">
+                            </div>
+                            <p class="front-p">Si llegaras a sufrir un precance de robo total de tu auto, y por alguna razon
+                                no lo pudiéramos recuperar, el seguro te lo paga gracias a la póliza emitida 
+                                por las aseguradoras <span class="chubb-icon"><img src="assets/icons/chubb_bw.png"></span>  
+                                y 
+                                <span class="hdi-icon">
+                                    <img src="assets/icons/hdi_bw.png">
+                               </span>
+                                Con un precio de <span class="green-price">$349</span> al mes.
+                           </p>
+                            <div class="plan-tags">
+                                <div class="plan-tag">
+                                    <img src="assets/images/tag_gps.png" alt="">
+                                </div>
+                                <div class="plan-tag">
+                                    <img src="assets/images/tag_asistencia.png" alt="">
+                                </div>
+                                <div class="plan-tag">
+                                    <img src="assets/images/tag_app.png" alt="">
+                                </div>
+                                <div class="plan-tag">
+                                    <img src="assets/images/tag_polizaUnica.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flip-card-back">
+                            <div class="plan-logo">
+                                <img src="assets/images/ituranConSeguro.png">
+                            </div>
+                            <div class="text-back-arr">
+                                <p class="front-p">Póliza contra robo total de automóvil emitida por las 
+                                    aseguradoras 
+                                    <span class="chubb-icon">
+                                        <img src="assets/icons/chubb_bw.png">
+                                    </span>  
+                                     y 
+                                     <span class="hdi-icon">
+                                         <img src="assets/icons/hdi_bw.png">
+                                    </span>
+                                     seguros. Servicio de localización y recuperación vehicular. Si llegaras a sufrir un robo total 
+                                     del vehículo, recuperamos el automóvil <br>hasta en 48 horas*.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-container">
+                <button class="price-tag price-tag-best" 
+                        (click)="goTo('contratarAhora')">
+                    CONTRATAR AHORA POR $395
+                </button>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div class="plan-logo">
+                                <img src="assets/images/ituranCSDT.png">
+                            </div>
+                            <p class="front-p">
+                                <strong>Ituran con seguro + Daños a terceros </strong> te brinda 
+                                 todos los beneficios de <strong>Ituran con Seguro</strong> más responsabilidad
+                                 civil para bienes y personas. Con un precio de <span class="blue-price">$395</span> al mes.
+                            </p>
+                            <div class="plan-tags">
+                                <div class="plan-tag">
+                                    <img src="assets/images/tag_gps.png" alt="">
+                                </div>
+                                <div class="plan-tag">
+                                    <img src="assets/images/tag_asistencia.png" alt="">
+                                </div>
+                                <div class="plan-tag">
+                                    <img src="assets/images/tag_app.png" alt="">
+                                </div>
+                                <div class="plan-tag">
+                                    <img src="assets/images/tag_polizaUnica.png" alt="">
+                                </div>
+                                <div class="plan-tag">
+                                    <img src="assets/images/tag_danios.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flip-card-back">
+                            <div class="plan-logo">
+                                <img src="assets/images/ituranCSDT.png">
+                            </div>
+                            <div class="text-back-arr">
+                                <p class="front-p"><strong>Ituran con Seguro + Daños a terceros</strong> 
+                                    la suma de responsabilidad civil para 
+                                    bienes y personas por $500, 000 
+                                    gracias a la póliza emitida por la 
+                                    aseguradora <span class="chubb-icon"><img src="assets/icons/chubb_bw.png"></span> 
+                                    </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

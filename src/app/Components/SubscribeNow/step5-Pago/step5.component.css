@@ -1,0 +1,139 @@
+.container {
+    width: 100%;
+    display: flex;
+}
+
+.step {
+    width: 80%;
+    max-width: 1440px;
+    margin: auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-position: bottom;
+    background-size: cover;
+}
+
+.step-1 {
+    display: flex;
+    flex-direction: row;
+    width: 60%;
+    justify-content: space-between; 
+    margin-bottom: 40px;
+}
+
+.card {
+    width: 43%;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 10px;
+    align-items: center;
+    border-radius: 15px;
+}
+.card p {
+    text-align: center;
+}
+.card p:nth-child(1) {
+    color: #9c9c9c;
+    margin: 0;
+}
+.card p:nth-child(2) {
+    color: #001b32;
+    margin-bottom: 0;
+}
+
+.metodos-pago {
+    margin-top: 40px;
+}
+
+.step-2 {
+    display: flex;
+    flex-direction: row;
+    width: 60%;
+    justify-content: space-between; 
+    margin-bottom: 40px;
+}
+
+.step-2 button {
+    color: white;
+    width: 43%;
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    align-items: center;
+    border-radius: 15px;
+    background-color: #80b447;
+    border-style: none;
+    justify-content: space-evenly;
+    transition: 0.3s;
+}
+
+.final-note {
+    width: 60%;
+}
+
+
+.step-3 button:disabled {
+    background-color: grey;
+}
+textarea:focus, input:focus, button:focus, select:focus {
+    outline: none;
+    background-color: rgba(175, 224, 255, 0.4);
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: white;
+    opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: white;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: white;
+}
+
+.step-2 button:hover{
+    background-color: #afdb81;
+}
+.step-4 button:hover, .step-3 button:hover {
+    background-color: #fca650;
+}
+.form-control input:hover {
+    border-color: white;
+}
+
+.step-3 button:disabled {
+    background-color: grey;
+}
+.step-3 button:disabled:hover {
+    background-color: rgb(104, 104, 104);
+}
+
+
+@media only screen and (max-width: 1024px) {
+	
+}
+
+@media only screen and (max-width: 768px) {
+    .step-1 {
+        width: 90%;
+    }
+    .step-2 {
+        width: 90%;
+    }
+    .final-note {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 485px) {
+    .step {
+        width: 100%;
+    }
+    .card[_ngcontent-aft-c126] p[_ngcontent-aft-c126]:nth-child(2) {
+        font-size: 9pt;
+    }
+}

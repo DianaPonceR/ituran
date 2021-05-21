@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="static-component" [style.background-image]="'url(assets/images/general-bg.png'">
+        <div class="faq">
+            <div class="faq-1">
+                <h4>Preguntas frecuentes</h4>
+            </div>
+            <div class="faq-2">
+                <div class="col">
+                    <div *ngFor="let faq of column_1" class="faq-group">
+                        <div class="faq-q">
+                            <div [ngClass]="faq.bulletClass" class="bullet"></div>
+                            <p>{{faq.question}}</p>
+                        </div>
+                        <div class="faq-a">
+                            <p *ngFor="let ans of faq.answers">{{ans}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div *ngFor="let faq of column_2" class="faq-group">
+                        <div class="faq-q">
+                            <div [ngClass]="faq.bulletClass" class="bullet"></div>
+                            <p>{{faq.question}}</p>
+                        </div>
+                        <div class="faq-a">
+                            <p *ngFor="let ans of faq.answers">{{ans}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,97 @@
+.container {
+    width: 100%;
+    background-color: #0b131b;
+    display: flex;
+}
+
+.static-component {
+    width: 100%;
+    max-width: 1440px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-position: left;
+}
+
+.how-to-pay-1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.how-to-pay-1 h4 {
+    font-size: 24pt;
+}
+
+.compra-group {
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.compra-group p {
+    margin-top: 30px;
+    width: 70%;
+    text-align: center;
+}
+.compra-group span {
+    margin-bottom: 30px;
+    width: 70%;
+    text-align: center;
+    font-size: 11pt;
+}
+.compra-group:nth-child(1) img {
+    width: 130px;
+}
+.compra-group:nth-child(2) img {
+    width: 300px;
+}
+.compra-group:nth-child(3) img {
+    width: 200px;
+}
+
+
+.how-to-pay-2 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.how-to-pay-2 .compra-group:nth-child(1) p {
+    margin-top: 50px;
+}
+
+.how-to-pay-2 .compra-group:nth-child(2) p {
+    margin-top: 40px;
+}
+
+.how-to-pay-2 .compra-group:nth-child(3) p {
+    margin-top: 90px;
+}
+
+@media only screen and (max-width: 1024px) {
+	
+}
+
+@media only screen and (max-width: 768px) {
+    .compra-group:nth-child(1) img {
+        width: 35%;
+    }
+    .compra-group:nth-child(2) img {
+        width: 70%;
+    }
+    .compra-group:nth-child(3) img {
+        width: 60%;
+    }
+}
+
+@media only screen and (max-width: 485px) {
+    .compra-group p {
+        font-size: 8pt;
+    }
+    .compra-group span {
+        font-size: 6pt;
+    }
+}

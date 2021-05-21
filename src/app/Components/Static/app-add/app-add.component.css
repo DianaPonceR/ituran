@@ -1,0 +1,19 @@
+.iw-container {
+    width: 100%;
+    display: flex;
+    background-color: #02090F;
+}
+
+.static-component {
+    width: 100%;
+    max-width: 1440px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+}
+
+img {
+    width: 100%;
+}

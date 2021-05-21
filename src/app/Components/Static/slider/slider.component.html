@@ -1,0 +1,19 @@
+<div class="iw-container">
+    <div [style.background-image]="'url(assets/images/carousel_bg.png'" class="iw-carousel">
+        <ngb-carousel *ngIf="slides" interval="3000">
+            <ng-template *ngFor="let slide of slides" ngbSlide>
+              <div class="picsum-img-wrapper" ngClass="{{slide.class}}">
+                <img [src]="slide.imageUrl" alt="">
+                <div class="big-circle"></div>
+                <div class="small-circle"></div>
+                <div class="carousel-label">
+                    <h3 *ngIf="slide.label">{{slide.labelText}}</h3>
+                </div>
+              </div>
+              <div class="carousel-caption">
+                <p *ngIf="slide.caption">{{slide.captionText}}</p>
+              </div>
+            </ng-template>
+        </ngb-carousel>
+    </div>
+</div>

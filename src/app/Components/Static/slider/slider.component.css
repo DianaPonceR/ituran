@@ -1,0 +1,267 @@
+/* @import './assets/css/bootstrap.min.css';
+@import './assets/css/bootstrap-grid.min.css';
+@import './assets/css/bootstrap-reboot.min.css'; */
+
+/*,node_modules/bootstrap/dist/css/bootstrap.min.css"*/
+textarea:focus, input:focus, button:focus, select:focus {
+    outline: none;
+}
+.iw-container {
+    width: 100%;
+    background-color: #0b131b;
+    display: flex;
+}
+
+.iw-carousel {
+    width: 100%;
+    max-width: 1440px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-position: center;
+    background-size: cover;
+}
+
+.picsum-img-wrapper {
+    max-width: 1440px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    height: 700px;
+}
+
+.picsum-img-wrapper img {
+    height: max-content;
+    position: relative;
+}
+
+.big-circle {
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    position: absolute;
+
+}
+
+.small-circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    position: absolute;
+}
+
+.carousel-caption {
+    
+}
+
+.carousel-caption p {
+    font-size: 20pt;
+}
+
+.carousel-label {
+    position: absolute;
+    top: 10%;
+}
+.carousel-label h3 {
+    font-size: 36pt;
+}
+
+/*Slides especific*/
+.slide-1 img {
+    width: 65%;
+    top: 30%;
+}
+.slide-1 .big-circle {
+    left: 10%;
+    top: 10%;
+    background-color: #479acd /*BLUE*/
+}
+.slide-1 .small-circle {
+    bottom: 15%;
+    right: 10%;
+    background-color: #80b447; /*GREEN*/
+}
+.slide-1 .carousel-label {
+    right: 8%;
+}
+.slide-2 img {
+    width: 35%;
+    top: 11%;
+}
+.slide-2 .big-circle {
+    right: 10%;
+    top: 10%;
+    background-color: #479acd /*BLUE*/
+}
+.slide-2 .small-circle {
+    bottom: 25%;
+    left: 15%;
+    background-color: #80b447; /*GREEN*/
+}
+.slide-2 .carousel-label {
+    right: 8%;
+}
+.slide-3 img {
+    width: 17%;
+    top: 11%;
+}
+.slide-3 .big-circle {
+    left: 15%;
+    top: 10%;
+    height: 230px;
+    width: 230px;
+    background-color: #80b447; /*GREEN*/
+}
+.slide-3 .small-circle {
+    bottom: 20%;
+    right: 20%;
+    height: 130px;
+    width: 130px;
+    background-color: #479acd /*BLUE*/
+}
+.slide-3 .carousel-label {
+    right: 10%;
+}
+.slide-4 img {
+    width: 28%;
+    top: 30%;
+}
+.slide-4 .big-circle {
+    left: 15%;
+    top: 16%;
+    background-color: #479acd /*BLUE*/
+}
+.slide-4 .small-circle {
+    bottom: 15%;
+    right: 20%;
+    background-color: #80b447; /*GREEN*/
+}
+.slide-4 .carousel-label {
+    right: 8%;
+}
+.slide-5 img {
+    width: 35%;
+    top: 15%;
+}
+.slide-5 .big-circle {
+    left: 10%;
+    top: 10%;
+    background-color: #479acd /*BLUE*/
+}
+.slide-5 .small-circle {
+    bottom: 27%;
+    right: 18%;
+    background-color: #80b447; /*GREEN*/
+}
+.slide-5 .carousel-label {
+    right: 8%;
+}
+/* END ------------------------- slides especific */
+
+ngb-carousel {
+    width: 100%;
+}
+
+@media only screen and (max-width: 1024px) {
+	
+}
+
+@media only screen and (max-width: 768px) {
+    .picsum-img-wrapper {
+        height: 540px;
+    }
+    .carousel-label h3 {
+        font-size: 26pt;
+    }
+    .carousel-caption p {
+        font-size: 16pt;
+    }
+    .slide-1 img {
+        top: 40%;
+    }
+    .slide-1 .big-circle {
+        top: 20%;
+    }
+    .slide-1 .small-circle {
+        bottom: 22%;
+    }
+    .slide-2 img {
+        top: 20%;
+    }
+    .slide-2 .big-circle {
+        
+    }
+    .slide-2 .small-circle {
+        
+    }
+    .slide-3 img {
+        top: 21%;
+    }
+    .slide-3 .big-circle {
+        height: 160px;
+        width: 160px;
+    }
+    .slide-3 .small-circle {
+        bottom: 30%;
+    }
+    .slide-4 img {
+        top: 35%;
+    }
+    .slide-4 .big-circle {
+    }
+    .slide-4 .small-circle {
+    }
+    .slide-5 img {
+        top: 20%;
+    }
+    .slide-5 .big-circle {
+    }
+    .slide-5 .small-circle {
+    }
+    .big-circle {
+        width: 130px;
+        height: 130px;
+    }
+    .small-circle {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+@media only screen and (max-width: 485px) {
+    .picsum-img-wrapper {
+        height: 400px;
+    }
+    .big-circle {
+        width: 90px;
+        height: 90px;
+    }
+    .small-circle {
+        width: 50px;
+        height: 50px;
+    }
+    .carousel-label h3 {
+        font-size: 16pt;
+    }
+    .carousel-caption p {
+        font-size: 10pt;
+    }
+    .slide-2 img {
+        top: 32%;
+    }
+    .slide-3 img {
+        top: 33%;
+    }
+    .slide-3 .big-circle {
+        height: 80px;
+        width: 80px;
+    }
+    .slide-3 .small-circle {
+        height: 60px;
+        width: 60px;
+    }
+    .slide-5 img {
+        top: 33%;
+    }
+}

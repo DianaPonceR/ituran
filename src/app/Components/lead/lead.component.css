@@ -1,0 +1,147 @@
+/* .container {
+    color: white;
+    display: flex;
+    flex-direction: row;
+}
+
+.left-space {
+    width: 80%;
+} */
+/* @import "~src/styles.css"; */
+textarea:focus, input:focus, button:focus, select:focus {
+    outline: none;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+}
+
+.form-control {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 15px 0;
+}
+
+.card {
+    width: 20%;
+    /* margin: 140px 60px 0; */
+    background-color: #064560;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 25px;
+    margin-left: auto;
+    margin-right: 5%;
+    margin-top: 40px;
+    transition: 00.3s;
+}
+
+.card:hover {
+    transform: scale(1.03);
+    background-color: #08638a;
+}
+
+.lead-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    /* height: 500px; */
+}
+
+.lead-form input {
+    background-color: transparent;
+    border-radius: 25px;
+    border-style: solid;
+    color: white;
+    padding: 5px 10px;
+    margin-bottom: 20px;
+    height: 30px;
+    transition: 00.3s;
+}
+
+.lead-form input:hover {
+    border-color: white;
+}
+
+.lead-form label {
+    font-size: 14pt;
+}
+
+.lead-form p {
+    font-size: 12pt;
+}
+
+.lead-form span {
+    font-size: 8pt;
+}
+
+input {
+    font-family: PFBeauSansPro !important;
+}
+
+.lead-form button {
+    margin: 20px 0;
+    padding: 10px 20px;
+    background-color: #ff9222;
+    color: white;
+    border-style: none;
+    border-radius: 25px;
+    font-family: PFBeauSansPro !important;
+}
+.lead-form button:hover {
+    transition: 00.3s;
+    background-color: #ffaf5f;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: white;
+    opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: white;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: white;
+}
+.is-invalid {
+    border-color: rgb(255, 115, 115);
+}
+
+
+
+@media only screen and (max-width: 1024px) {
+	.card {
+        width: 25%;
+        padding: 10px;
+        margin-top: 0px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .card {
+        margin: auto;
+        margin-top: 40px;
+        margin-bottom: 40px;
+        width: 60%;
+        padding: 25px;
+    }
+
+}
+
+@media only screen and (max-width: 425px) {
+	.card {
+        margin-top: 0px;
+        margin-bottom: 40px;
+        width: 80%;
+        padding: 25px;
+    }
+}

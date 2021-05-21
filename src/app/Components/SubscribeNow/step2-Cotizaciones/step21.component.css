@@ -1,0 +1,190 @@
+.container {
+    width: 100%;
+    display: flex;
+}
+
+.step {
+    width: 80%;
+    max-width: 1440px;
+    margin: auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-position: bottom;
+    background-size: cover;
+    background-position: bottom;
+    background-size: cover;
+}
+
+.cotizaciones-message {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.cotizaciones-message h4 {
+    font-size: 18pt;
+}
+
+.cotizaciones {
+    margin-top: 0;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.plan-logo {
+    height: 110px;
+}
+
+.plan-logo img {
+    width: 120px;
+}
+
+.cotizaciones .cotizacion-card {
+    margin-top: 20px;
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cotizacion-card>div {
+    background-color: rgba(14, 70, 101, 0.5);
+    /* height: 80px; */
+    width: 90%;
+    color: white;
+    border-radius: 15px;
+    border-color: white;
+    border-style: solid;
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.cotizacion-card>div:hover {
+    transform: scale(1.1);
+}
+
+.cotizacion-card>div p {
+    font-size: 10pt;
+    width: 90%;
+}
+
+.cotizacion-card>div p:nth-child(2) {
+    margin-top: 10px;
+}
+
+.cotizacion-card .cot-details {
+    font-size: 8pt;
+    margin-bottom: 2px;
+    width: 90%;
+}
+
+.cot-details p {
+    margin-bottom: 0;
+    margin-top: 4px;
+    font-size: 9pt !important;
+    width: 100% !important;
+}
+
+.step-3 {
+    margin-top: 30px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.step-3 button {
+    margin: 20px 2%;
+    padding: 10px 20px;
+    background-color: #ff9222;
+    color: white;
+    border-style: none;
+    border-radius: 25px;
+    width: 200px;
+    height: 50px;
+    transition: 0.3s;
+    font-family: PFBeauSansPro !important;
+    font-size: 12pt;
+}
+
+.step-3 button:disabled {
+    background-color: grey;
+}
+
+.step-3 button:disabled:hover {
+    background-color: rgb(104, 104, 104);
+}
+.step-3 button:disabled {
+    background-color: grey;
+}
+textarea:focus, input:focus, button:focus, select:focus {
+    outline: none;
+    background-color: rgba(175, 224, 255, 0.4);
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: white;
+    opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: white;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: white;
+}
+
+.step-3 button:hover {
+    background-color: #fca650;
+}
+.form-control input:hover {
+    border-color: white;
+}
+
+.step-3 button:disabled {
+    background-color: grey;
+}
+.step-3 button:disabled:hover {
+    background-color: rgb(104, 104, 104);
+}
+.is-invalid {
+    border-color: rgb(255, 115, 115);
+}
+.invalid-feedback span {
+    color: rgb(255, 115, 115);
+}
+
+
+@media only screen and (max-width: 1024px) {
+	
+}
+
+@media only screen and (max-width: 768px) {
+    .step {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 485px) {
+    .cotizaciones .cotizacion-card {
+        width: 100%;
+    }
+    .step {
+        width: 100%;
+    }
+    .cotizaciones-message h4 {
+        text-align: center;
+    }
+}

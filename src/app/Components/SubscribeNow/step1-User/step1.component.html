@@ -1,0 +1,128 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+<div class="bg" [style.background-image]="'url(assets/images/flujo-bg.png'">
+    <div style="padding-top: 150px;"></div>
+    <app-progress-bar id="progressBar" [currentStep]='_userDataService.step'></app-progress-bar>
+    <div class="container">
+        
+        <form [formGroup]="stepForm" class=""> 
+            <div class="row"> 
+                <div class="form-control date-control col-md-6 col-sm-12">
+                    <label>Fecha de nacimiento</label>
+                    <input  type="date" 
+                            placeholder="" 
+                            formControlName="nacimiento" 
+                            [ngClass]="{'is-invalid' : (stepForm.get('nacimiento').touched || stepForm.get('nacimiento').dirty) && !stepForm.get('nacimiento').valid }"
+                            (input)="NacimientoModificado()">
+                    <i class="fa fa-calendar"></i>
+                </div>
+                <div class="form-control sex-control col-md-6 col-sm-12">
+                    <label>Sexo:</label>
+                    <input id="Mradio" type="radio" value="M" formControlName="sexo">
+                    <label for="Mradio">Hombre</label>
+                    <input id="Fradio" type="radio" value="F" formControlName="sexo">
+                    <label for="Fradio">Mujer</label>
+                </div>
+                <div class="form-control col-md-6 col-sm-12">
+                    <input   
+                            type="text" 
+                            placeholder="RFC" 
+                            formControlName="rfc"
+                            [ngClass]="{'is-invalid' : (stepForm.get('rfc').touched || stepForm.get('rfc').dirty) && !stepForm.get('rfc').valid }"
+                            >
+                </div>
+                <div class="form-control col-md-6 col-sm-12">
+                    <input   
+                            type="text" 
+                            placeholder="Homoclave" 
+                            maxlength="3"
+                            onkeypress="return check(event)"
+                            onpaste="return check(event)"
+                            formControlName="clave"
+                            [ngClass]="{'is-invalid' : (stepForm.get('clave').touched || stepForm.get('clave').dirty) && !stepForm.get('clave').valid }"
+                            >
+                </div>
+                <div class="form-control col-md-6 col-sm-12">
+                    <input 
+                            type="text" 
+                            placeholder="CP" 
+                            formControlName="cp"
+                            [ngClass]="{'is-invalid' : (stepForm.get('cp').touched || stepForm.get('cp').dirty) && !stepForm.get('cp').valid }"
+                            >
+                </div>
+                <div class="form-control col-md-6 col-sm-12">
+                    <input  
+                            type="text" 
+                            placeholder="Estado" 
+                            formControlName="estado"
+                            [ngClass]="{'is-invalid' : (stepForm.get('estado').touched || stepForm.get('estado').dirty) && !stepForm.get('estado').valid }"
+                            >
+                </div>
+                <div class="form-control col-md-6 col-sm-12">
+                    <input  
+                            type="text" 
+                            placeholder="Ciudad" 
+                            formControlName="ciudad"
+                            [ngClass]="{'is-invalid' : (stepForm.get('ciudad').touched || stepForm.get('ciudad').dirty) && !stepForm.get('ciudad').valid }"
+                            >
+                </div>
+                <div class="form-control col-md-6 col-sm-12">
+                    <input  
+                            type="text" 
+                            placeholder="Municipio" 
+                            formControlName="municipio"
+                            [ngClass]="{'is-invalid' : (stepForm.get('municipio').touched || stepForm.get('municipio').dirty) && !stepForm.get('municipio').valid }"
+                            >
+                </div>
+                <div class="form-control col-md-6 col-sm-12">
+                    <!-- <input  
+                            type="text" 
+                            placeholder="Colonia" 
+                            formControlName="colonia"
+                            [ngClass]="{'is-invalid' : (stepForm.get('colonia').touched || stepForm.get('colonia').dirty) && !stepForm.get('colonia').valid }"
+                            > -->
+                    <select formControlName="colonia" [ngClass]="{'is-invalid' : (stepForm.get('colonia').touched || stepForm.get('colonia').dirty) && !stepForm.get('colonia').valid }">
+                        <option value="0" disabled [ngValue]="null">Selecciona Colonia</option>
+                        <option value="{{col.response.asentamiento}}" *ngFor="let col of _userDataService.userDataModel.sepomexResponse">
+                            {{col.response.asentamiento}}
+                        </option>
+                    </select>
+                    <i class="fa fa-chevron-down select-i"></i>
+                </div>
+                <div class="form-control col-md-6 col-sm-12">
+                    <input  type="text" 
+                            placeholder="Calle" 
+                            formControlName="calle"
+                            maxlength="20"
+                            [ngClass]="{'is-invalid' : (stepForm.get('calle').touched || stepForm.get('calle').dirty) && !stepForm.get('calle').valid }"
+                            >
+                </div>
+                <div class="form-control col-md-6 col-sm-12">
+                    <input  type="text" 
+                            placeholder="No." 
+                            maxlength="5"
+                            digitOnly
+                            formControlName="exterior"
+                            [ngClass]="{'is-invalid' : (stepForm.get('exterior').touched || stepForm.get('exterior').dirty) && !stepForm.get('exterior').valid }"
+                            >
+                </div>
+                <div class="form-control col-md-6 col-sm-12">
+                    <input  type="text" 
+                            placeholder="Indicaciones" 
+                            formControlName="indicaciones"
+                            maxlength="40"
+                            [ngClass]="{'is-invalid' : (stepForm.get('indicaciones').touched || stepForm.get('indicaciones').dirty) && !stepForm.get('indicaciones').valid }"
+                            >
+                </div>
+            </div>
+            <div class="navigation row">
+                <button (click)='prev()'>Atrás</button>
+                <button [disabled]="!stepForm.valid" 
+                        (click)='save()'>
+                        Siguiente
+                </button>
+            </div>
+        </form>
+        
+    </div>
+</div>

@@ -1,0 +1,174 @@
+.iw-container {
+    width: 100%;
+    background-color: #0b131b;
+    display: flex;
+}
+
+.static-component {
+    width: 100%;
+    max-width: 1440px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-position: right;
+    padding-bottom: 60px;
+}
+
+.static-component img {
+    width: 100%;
+    position: relative;
+    z-index: 3;
+    top: -45px;
+}
+
+.static-component .general {
+    /* position: absolute;
+    z-index: 10; */
+    width: 100%;
+}
+
+
+.general-1 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.general-1 h3 {
+    text-align: center;
+    width: 70%;
+    color: #459dcf;
+    font-size: 25pt;
+    margin-top: 40px;
+    margin-bottom: 50px;
+}
+
+.general-2 {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.col-l .bullet {
+    background-color: #ff0000;
+}
+
+.col-r .bullet {
+    background-color: #80b447;
+}
+
+.compare {
+    display: flex;
+    font-size: 14pt;
+}
+
+.compare .bullet {
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    margin-right: 15px;
+    margin-top: 5px;
+}
+.compare p:nth-child(1) {
+    padding-top: 4px;
+    font-size: 12pt;
+    margin-bottom: 5px;
+}
+.compare p:nth-child(2) {
+    font-size: 10pt;
+}
+
+.logo-container {
+    width: 150px;
+}
+
+.first-level {
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.col-l, .col-r {
+    width: 40%;
+}
+
+.compare-text {
+    width: 90%;
+}
+
+.grey-logo {
+    display: flex;
+    justify-content: center;
+    margin-top: 150px;
+    width: 100%;
+}
+
+.grey-logo img {
+    width: 50%;
+}
+
+@media only screen and (max-width: 1024px) {
+    .general-1 h3 {
+        font-size: 26pt;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .general-1 {
+        margin-bottom: 60px;
+    }
+    .general-1 h3 {
+        margin-top: 20px;
+    }
+    .compare .bullet {
+        width: 20px;
+        margin-top: 5px;
+        height: 20px;
+    }
+    .grey-logo img {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+	.go-to {
+        width: 90%;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+    
+    .go-to button {
+        width: 26%;
+        font-size: 10pt;
+    }
+    .general-1 h3 {
+        margin-bottom: 0;
+        font-size: 12pt;
+    }
+    .compare p:nth-child(1) {
+        margin-bottom: 5px;
+    }
+
+    .compare p:nth-child(2) {
+        font-size: 8pt;
+    }
+    .general-2 {
+        flex-direction: column;
+        align-items: center;
+    }
+    .col-l, .col-r {
+        width: 90%;
+    }
+    .col-r {
+        margin-top: 60px;
+    }
+    .grey-logo img {
+        display: none;
+    }
+    
+}

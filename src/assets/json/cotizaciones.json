@@ -1,0 +1,31 @@
+[
+    {
+        "id": 10838,
+        "nombre": "RASTREADOR ITURAN GPS/GPRS",
+        "img": "assets/images/ituranProteccion.png",
+        "importes": [
+            "vehiculoSinSiniestro",
+            "terminosCondiciones"
+        ]
+    },
+    {
+        "id": 10840,
+        "nombre": "ITURAN CON SEGUROS MEXICO",
+        "img": "assets/images/ituranConSeguro.png",
+        "importes": [
+            "vehiculoParticular",
+            "vehiculoSinSiniestro",
+            "terminosCondiciones"
+        ]
+    },
+    {
+        "id": 10841,
+        "nombre": "ITURAN CON SEGURO + RC",
+        "img": "assets/images/ituranCSDT.png",
+        "importes": [
+            "vehiculoParticular",
+            "vehiculoSinSiniestro",
+            "terminosCondiciones"
+        ]
+    }
+]

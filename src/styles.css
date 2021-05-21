@@ -1,1 +1,184 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: "PFBeauSansPro";
+    font-style: normal;
+    font-weight: normal;
+    src: local("?"), url("assets/fonts/PFBeauSansPro-SemiBold.ttf") format("truetype");
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0px !important;
+    font-family: PFBeauSansPro !important;
+    background-color: #0b131b !important;
+    color: white !important;
+}
+
+textarea:focus, input:focus, button:focus, select:focus {
+    outline: none;
+    background-color: rgba(175, 224, 255, 0.4);
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+}
+
+.loading {
+    width: 100vw;
+    display: none;
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    height: 100vh;
+    background-color: rgba(29, 28, 28, 0.9);
+  }
+  
+.view_mobile {
+    display: none;
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: white;
+    opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: white;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: white;
+}
+
+.form-control {
+    justify-content: center !important;
+    display: flex !important;
+    height: 60px !important;
+    margin: 5px 0px;
+    background-color: transparent !important;
+    border: none !important;
+}
+input, select {
+    background-color: rgba(71, 154, 205, 0.4);
+    border-radius: 25px;
+    border-style: solid;
+    color: white;
+    padding: 5px 10%;
+    transition: 0.3s;
+    font-family: PFBeauSansPro !important;
+    font-size: 10pt !important;
+    width: 80%;
+    height: 50px;
+}
+.date-control input {
+    width: 48% !important;
+}
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+}
+.date-control label {
+    color: white;
+    padding-right: 20px;
+    width: min-content;
+    font-size: 10pt;
+}
+input:hover, select:hover {
+    border-color: white;
+}
+select option {
+    background-color: white;
+    color: black;
+    margin-top: 5px;
+    font-family: PFBeauSansPro !important;
+    font-size: 12pt;
+}
+.form-control i {
+    width: 0px;
+    position: relative;
+    right: 40px;
+    font-size: 20px;
+    line-height: 50px;
+    cursor: pointer;
+    z-index: 1;
+    color: white;
+    pointer-events: none;
+}
+.is-invalid {
+    border-color: rgb(255, 115, 115);
+}
+.invalid-feedback span {
+    color: rgb(255, 115, 115);
+}
+.navigation button {
+    margin: 20px 0;
+    padding: 10px 20px;
+    background-color: #ff9222;
+    color: white;
+    border-style: none;
+    border-radius: 25px;
+    width: 200px;
+    height: 50px;
+    transition: 0.3s;
+    font-family: PFBeauSansPro !important;
+    font-size: 12pt;
+}
+.navigation button:hover {
+    background-color: #fca650;
+}
+.navigation button:disabled {
+    background-color: grey;
+}
+.navigation {
+    justify-content: space-between;
+    display: flex;
+}
+.bg {
+    width: 100%;
+    max-width: 1440px;
+    margin: auto;
+    position: relative;
+    background-position: bottom;
+    background-size: cover;
+    padding-bottom: 30px;
+}
+
+@media only screen and (max-width: 768px) {
+    .view_desktop {
+        display: none;
+    }
+    .view_mobile {
+        display: block;
+        position: relative;
+        left: 0;
+        width: 100%;
+        top: 200px;
+    }
+
+    .list_step_flow img {
+        width: 50%;
+        margin-left: -20%;
+    }
+    .navigation {
+        margin: 0 !important;
+    }
+    input, select {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 485px) {
+    .navigation button {
+        width: 150px;
+    }
+    .date-control input {
+        width: 70% !important;
+    }
+}
+

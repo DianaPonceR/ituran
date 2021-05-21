@@ -1,0 +1,119 @@
+.container {
+    width: 100%;
+    background-color: #0b131b;
+    display: flex;
+}
+
+.static-component {
+    width: 100%;
+    max-width: 1440px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-position: left;
+    padding-bottom: 50px;
+}
+
+.summary-1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.summary-1 p {
+    width: 60%;
+    font-size: 14pt;
+    text-align: center;
+}
+.summary-1 p:nth-child(1) {
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.summary-2 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.summary-3 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+
+.summary-group {
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.summary-group p {
+    margin-top: 30px;
+    width: 70%;
+    text-align: center;
+}
+/* .summary-group span {
+    margin-bottom: 30px;
+    width: 70%;
+    text-align: center;
+    font-size: 8pt;
+} */
+.summary-group:nth-child(1) img {
+    width: 180px;
+}
+.summary-group:nth-child(2) img {
+    width: 200px;
+}
+.summary-group:nth-child(3) img {
+    width: 140px;
+}
+
+.summary-3 button {
+    width: 25%;
+    padding: 20px 20px;
+    background-color: #ff9222;
+    color: white;
+    border-style: none;
+    border-radius: 25px;
+}
+
+.summary-3 button:hover {
+    transition: 00.3s;
+    background-color: #ffaf5f;
+}
+
+
+@media only screen and (max-width: 1024px) {
+	.summary-1 p {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .summary-group:nth-child(1) img {
+        width: 60%;
+    }
+    .summary-group:nth-child(2) img {
+        width: 70%;
+    }
+    .summary-group:nth-child(3) img {
+        width: 47%;
+    }
+    .summary-3 button {
+        width: 35%;
+    }
+}
+
+@media only screen and (max-width: 485px) {
+    .summary-1 p {
+        font-size: 12pt;
+    }
+    .summary-3 button {
+        width: 75%;
+    }
+}

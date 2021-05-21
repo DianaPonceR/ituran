@@ -1,0 +1,101 @@
+.container {
+    width: 100%;
+    display: flex;
+}
+
+.progress-bar {
+    width: 100%;
+    max-width: 1440px;
+    margin: auto;
+    position: relative;
+}
+
+.line-bg-container {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    top: 30px;
+    z-index: 0;
+}
+.line-bg {
+    height: 4px;
+    width: 75%;
+    background-color: #80b447;
+}
+
+.step-circle {
+    background-color: #479acd;
+    border-radius: 100%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s;
+}
+
+.currentStep {
+    background-color: white !important;
+    color: #479acd;
+}
+
+.steps {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: auto;
+    z-index: 1;
+    position: relative;
+}
+
+.step {
+    width: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.step img {
+    width: 40px;
+}
+
+.step-text {
+    font-size: 11pt;
+    text-align: center;
+}
+
+@media only screen and (max-width: 1024px) {
+	
+}
+
+@media only screen and (max-width: 768px) {
+    .step-circle {
+        width: 42px;
+        height: 42px;
+    }
+    .line-bg-container {
+        top: 20px;
+    }
+    .step {
+        width: 80px;
+    }
+    .step-text {
+        font-size: 10pt;
+    }
+}
+
+@media only screen and (max-width: 485px) {
+    .steps {
+        width: 90%;
+    }
+    .step-circle {
+        width: 32px;
+        height: 32px;
+    }
+    .line-bg-container {
+        top: 15px;
+    }
+}

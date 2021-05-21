@@ -1,0 +1,82 @@
+.container {
+    width: 100%;
+    display: flex;
+    background-color: #02090F;
+}
+
+.static-component {
+    width: 100%;
+    max-width: 1440px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+    background-position: bottom;
+    padding-bottom: 40px;
+    padding-top: 40px;
+}
+.faq {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 0 4%;
+}
+.faq-1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.faq-1 h4 {
+    font-size: 24pt;
+}
+.faq-2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    justify-content: space-around;
+}
+
+.col {
+    width: 50%;
+}
+
+.faq-q {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.bullet {
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    margin-right: 5px;
+}
+.bullet-blue {
+    background-color: #479acd;
+}
+.bullet-green {
+    background-color: #80b447;
+}
+
+
+@media only screen and (max-width: 1024px) {
+	.col {
+        width: 40%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    
+}
+
+@media only screen and (max-width: 485px) {
+    .faq-2 {
+        flex-direction: column;
+        align-items: center;
+    }
+    .col {
+        width: 80%;
+    }
+}

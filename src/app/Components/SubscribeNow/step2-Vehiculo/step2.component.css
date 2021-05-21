@@ -1,0 +1,24 @@
+.vin-form-control input {
+    width: 90%;
+}
+
+.navigation {
+    padding: 0 2.8%;
+}
+
+@media only screen and (max-width: 1024px) {
+	
+}
+
+@media only screen and (max-width: 768px) {
+    .navigation {
+        padding: 0;
+    }
+    .vin-form-control input {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 485px) {
+    
+}

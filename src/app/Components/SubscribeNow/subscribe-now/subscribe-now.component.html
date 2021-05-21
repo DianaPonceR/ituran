@@ -1,0 +1,27 @@
+<div class="">
+    <div class="subscribe-now" [style.background-image]="'url(assets/images/flujo-bg.png'">
+        <div class="message">
+            <h4>Contrata ahora y comienza a disfrutar de los beneficios de Ituran con Seguro</h4>
+        </div>
+        <div class="progress-bar-container">
+            <app-progress-bar id="progressBar" [currentStep]='_userDataService.step'></app-progress-bar>
+        </div>
+        <div class="steps-output">
+            <!-- <select>
+                <option>dfgdfgs</option>
+                <option>sdfgsdfg</option>
+                <option>sdfgsfg</option>
+            </select> -->
+            <app-step0></app-step0>
+            <!-- <app-step0 style="display: block" *ngIf="_userDataService.currentForm == 'inicial'" [@inOutAnimation]></app-step0>
+            <app-step1 style="display: block" *ngIf="_userDataService.currentForm == 'cliente'" [@inOutAnimation]></app-step1>
+            <app-step2 style="display: block" *ngIf="_userDataService.currentForm == 'vehiculo'" [@inOutAnimation]></app-step2>
+            <app-step21 style="display: block" *ngIf="_userDataService.currentForm == 'cotizaciones'" [@inOutAnimation]></app-step21>
+            <app-step3 style="display: block" *ngIf="_userDataService.currentForm == 'confirma'" [@inOutAnimation]></app-step3>
+            <app-step4 style="display: block" *ngIf="_userDataService.currentForm == 'factura'" [@inOutAnimation]></app-step4>
+            <app-step5 style="display: block" *ngIf="_userDataService.currentForm == 'pago'" [@inOutAnimation]></app-step5>
+            <app-step6 style="display: block" *ngIf="_userDataService.currentForm == 'agenda'" [@inOutAnimation]></app-step6>
+            <app-proceso-finalizado style="display: block" *ngIf="_userDataService.currentForm == 'finalizado'" [@inOutAnimation]></app-proceso-finalizado> -->
+        </div>
+    </div>
+</div>
