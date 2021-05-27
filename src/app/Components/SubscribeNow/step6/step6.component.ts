@@ -20,6 +20,9 @@ export class Step6Component implements OnInit {
   public data_selected: any;
   public hora_selected: any = 0;
 
+  public horaFlag: boolean = false;
+  public diaFlag: boolean = false;
+
   public status_msg: any = null;
 
   constructor(public _userDataService: UserDataService, private _ituranApiService: IturanApiService) { 
@@ -98,6 +101,7 @@ export class Step6Component implements OnInit {
 
   setHorarios(centro){
     this.data_selected = centro;
+    this.hora_selected = 0;
     for(var k in centro) {
       if(centro[k].Data == this.dia_selected){
         this.data_selected = centro[k].Horarios;
@@ -152,7 +156,7 @@ export class Step6Component implements OnInit {
       console.log(registrar);
       if(localStorage.getItem("ituranCita") == null){
 
-        
+
         // dev
         // document.getElementById("completo").style.display = "block";
         // HideLoader();
@@ -226,7 +230,7 @@ export class Step6Component implements OnInit {
       {
         LOJA: {
           CD_LOJA: 1111,
-          NOME_LOJA: "BOSCH GUSTAVO A. MADERO",
+          NOME_LOJA: "BOSCH CUAUTITLÁN IZCALLI",
           NM_BAIRRO: "bairro",
           NR_NUMERO: "55554646",
           NM_ENDERECO: "Colonia 1",
@@ -290,7 +294,7 @@ export class Step6Component implements OnInit {
       {
         LOJA: {
           CD_LOJA: 2222,
-          NOME_LOJA: "BOSCH ÁLVARO OBREGÓN",
+          NOME_LOJA: "MEINEKE BOSQUES DEL LAGO",
           NM_BAIRRO: "bairro",
           NR_NUMERO: "55554646",
           NM_ENDERECO: "Colonia 1",

@@ -15,4 +15,8 @@ export class Cliente{
       return `Calle ${this.calle} ${this.exterior}, Colonia ${this.colonia}, ${this.municipio}, CP ${this.cp}, ${this.ciudad}, ${this.estado}` 
     }
     constructor(){}
+
+    getDireccion(): string {
+      return `Calle ${this.calle} ${this.exterior}, Colonia ${this.colonia}, ${this.municipio}, CP ${this.cp}, ${this.ciudad}, ${this.estado}` 
+    }
   }

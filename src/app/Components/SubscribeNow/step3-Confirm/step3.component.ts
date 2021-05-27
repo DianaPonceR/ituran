@@ -23,7 +23,6 @@ export class Step3Component implements OnInit {
     this._userDataService.getSessionState();
     if(this._userDataService.currentForm != 'confirma') this._userDataService.goToForm(this._userDataService.currentForm);
     this.loadImportes();
-
     if(this.importes.includes('vehiculoParticular')){
       this.stepForm = this.fb.group({
         facturar: this._userDataService.userDataModel.facturar,

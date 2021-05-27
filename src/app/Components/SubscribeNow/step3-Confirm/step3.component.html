@@ -6,14 +6,14 @@
             <div class="step-1">
                 <div class="cliente-col">
                     <h4>DATOS DEL CLIENTE</h4>
-                    <p>NOMBRE: {{_userDataService.userDataModel.inicial.nombreCompleto}}</p>
+                    <p>NOMBRE: {{_userDataService.userDataModel.inicial.nombre}} {{_userDataService.userDataModel.inicial.paterno}} {{_userDataService.userDataModel.inicial.materno}}</p>
                     <p>FECHA DE NACIMIENTO: {{_userDataService.userDataModel.cliente.nacimiento | date: 'dd/MM/yyyy'}}</p>
                     <p>RFC: {{_userDataService.userDataModel.cliente.rfc}}</p>
                     <p>SEXO: {{_userDataService.userDataModel.cliente.sexo}}</p>
                     <p>TELÉFONO: {{_userDataService.userDataModel.inicial.telefono}}</p>
                     <p>CORREO: {{_userDataService.userDataModel.inicial.correo}}</p>
                     <p>DIRECCIÓN: </p>
-                    <p>{{_userDataService.userDataModel.cliente.direccion}}</p>
+                    <p>Calle {{_userDataService.userDataModel.cliente.calle}}, Colonia {{_userDataService.userDataModel.cliente.colonia}}, {{_userDataService.userDataModel.cliente.municipio}}, CP {{_userDataService.userDataModel.cliente.cp}}, {{_userDataService.userDataModel.cliente.ciudad}}, {{_userDataService.userDataModel.cliente.estado}} </p>
                 </div>
                 <div class="vehicle-col">
                     <h4>DATOS DEL VEHÍCULO</h4>
@@ -34,11 +34,11 @@
                             <input id="facturar" type="checkbox" formControlName="facturar">
                         </div>
                     </div>
-                    <div class="step-form-1">
+                    <!-- <div class="step-form-1">
                         <div class="">
                             <h3>IMPORTE</h3>
                         </div>
-                    </div>
+                    </div> -->
                     <div *ngIf="importesLoaded" class="step-form-2"> 
                         <div *ngIf="importes.includes('vehiculoParticular')" class="checkbox-card">
                             <label for="vehiculoParticular">Mi vehículo es de uso particular sin fines de lucro</label>
@@ -49,7 +49,11 @@
                             <input id="vehiculoSinSiniestro" type="checkbox" formControlName="vehiculoSinSiniestro">
                         </div>
                         <div class="checkbox-card" >
-                            <label for="terminosCondiciones">Términos y condiciones</label>
+                            <label for="terminosCondiciones">
+                                <a href="assets/info/T&C SERVICIOS ITURAN.pdf" target="_blank" style="color: white;">
+                                    Términos y condiciones
+                                  </a>
+                            </label>
                             <input id="terminosCondiciones" type="checkbox" formControlName="terminosCondiciones">
                         </div>
                     </div>

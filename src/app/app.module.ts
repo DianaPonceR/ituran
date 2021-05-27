@@ -37,6 +37,7 @@ import { ProcesoFinalizadoComponent } from './Components/SubscribeNow/proceso-fi
 import { RouterModule } from '@angular/router';
 import { AlphabetOnlyDirective } from './Helpers/alphabet-only.directive';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { CotizacionBodyComponent } from './Components/SubscribeNow/cotizacion-body/cotizacion-body.component';
 
 @NgModule({
   declarations: [
@@ -67,7 +68,8 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
     ProgressBarComponent,
     Step21Component,
     ProcesoFinalizadoComponent,
-    AlphabetOnlyDirective
+    AlphabetOnlyDirective,
+    CotizacionBodyComponent
   ],
   imports: [
     BrowserModule,

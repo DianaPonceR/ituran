@@ -15,6 +15,8 @@
                             [ngClass]="{'is-invalid' : (stepForm.get('nacimiento').touched || stepForm.get('nacimiento').dirty) && !stepForm.get('nacimiento').valid }"
                             (input)="NacimientoModificado()">
                     <i class="fa fa-calendar"></i>
+                    <!-- <input type="text" ngbDatepicker #d="ngbDatepicker"/>
+                    <button (click)="d.toggle()">Toggle</button> -->
                 </div>
                 <div class="form-control sex-control col-md-6 col-sm-12">
                     <label>Sexo:</label>
@@ -39,6 +41,7 @@
                             onkeypress="return check(event)"
                             onpaste="return check(event)"
                             formControlName="clave"
+                            style="text-transform: uppercase;"
                             [ngClass]="{'is-invalid' : (stepForm.get('clave').touched || stepForm.get('clave').dirty) && !stepForm.get('clave').valid }"
                             >
                 </div>

@@ -31,6 +31,9 @@ export class Step0Component implements OnInit {
   anios: number[];
   modelos: Modelo[];
   token: string;
+  searchedModelos: boolean = false;
+  marcaSelected: boolean = false;
+  anioSelected: boolean = false;
 
   constructor(private fb: FormBuilder, 
               private sepomex: SepomexService, 
@@ -55,6 +58,7 @@ export class Step0Component implements OnInit {
     //   });
     //   this.LeadDataChanged();
     // }
+    // end dev
   }
 
   save():void {
@@ -198,11 +202,32 @@ export class Step0Component implements OnInit {
     
   }
 
-  marcaAnioSelected() {
-    var marca: number = +this.stepForm.get('marca').value;
-    var anio: number = +this.stepForm.get('anio').value;
-    if(marca != 0 && anio != 0) {
+  marcaAnioSelected(selected: string) {
+    var marca: number = this.stepForm.get('marca').value;
+    var anio: number = this.stepForm.get('anio').value;
+
+    if(selected === 'anio' && this.searchedModelos) {
+      this.stepForm.patchValue({
+        marca: null,
+        modelo: null
+      });
+      this.modelos = null;
+      this.searchedModelos = false;
+      return
+    }
+    if (selected === 'marca' && this.searchedModelos){
+      this.stepForm.patchValue({
+        anio: null,
+        modelo: null
+      });
+      this.modelos = null;
+      this.searchedModelos = false;
+      return
+    }
+
+    if(marca != null && anio != null) {
       this.getModelosCatalog(marca, anio);
+      this.searchedModelos = true;
     }
   }
 

@@ -16,4 +16,8 @@ export class Inicial{
         return `${this.nombre} ${this.paterno} ${this.materno}`
     }
     constructor(){}
+
+    getNombreCompleto(): string{
+        return `${this.nombre} ${this.paterno} ${this.materno}`
+    }
   }

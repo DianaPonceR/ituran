@@ -4,7 +4,7 @@
 }
 
 .step {
-    width: 80%;
+    width: 100%;
     max-width: 1440px;
     margin: auto;
     position: relative;
@@ -54,14 +54,14 @@
     align-items: center;
 }
 
-.cotizacion-card>div {
-    background-color: rgba(14, 70, 101, 0.5);
+.cotizacion-card>div:nth-child(2) {
+    /* background-color: rgba(14, 70, 101, 0.5); */
     /* height: 80px; */
-    width: 90%;
+    background-color: #479acd;
+    width: 70%;
     color: white;
+    border: 1px solid #cccccc;
     border-radius: 15px;
-    border-color: white;
-    border-style: solid;
     transition: 0.3s;
     display: flex;
     flex-direction: column;
@@ -69,15 +69,19 @@
     text-align: center;
     padding-top: 20px;
     padding-bottom: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
-.cotizacion-card>div:hover {
+.cotizacion-card>div:nth-child(2):hover {
     transform: scale(1.1);
 }
 
-.cotizacion-card>div p {
+.cotizacion-card>div:nth-child(2) p {
     font-size: 10pt;
     width: 90%;
+    margin: 0;
+    font-size: 12pt;
 }
 
 .cotizacion-card>div p:nth-child(2) {
@@ -168,12 +172,21 @@ textarea:focus, input:focus, button:focus, select:focus {
 
 
 @media only screen and (max-width: 1024px) {
-	
+	.cotizaciones .cotizacion-card {
+        width: 48%;
+    }
 }
 
 @media only screen and (max-width: 768px) {
     .step {
         width: 100%;
+    }
+    .cotizaciones .cotizacion-card {
+        width: 90%;
+    }
+    .cotizaciones {
+        flex-direction: column;
+        align-content: center;
     }
 }
 

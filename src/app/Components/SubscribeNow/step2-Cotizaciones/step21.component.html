@@ -6,7 +6,7 @@
             <div class="cotizaciones-message">
                 <h4>Selecciona la cotización de tu preferencia</h4>
             </div>
-            <div *ngIf="cotizacionesConfigLoaded" class="cotizaciones">
+            <!-- <div *ngIf="cotizacionesConfigLoaded" class="cotizaciones">
                 <div class="cotizacion-card" *ngFor="let cotItem of _userDataService.userDataModel.cotizaciones.COTACAO_ITEMS">
                     <div (click)="cotizacionSelected(cotItem.CD_COTACAO_ITEM)" 
                             [style.background-color]="getBackgroundColor(cotItem.CD_COTACAO_ITEM)"
@@ -20,6 +20,30 @@
                             <div class="cot-details">
                                 <p *ngFor="let det of cotItem.DS_PRODUTO">{{det}}</p>
                             </div>
+                    </div>
+                </div>
+            </div> -->
+            <div *ngIf="cotizacionesConfigLoaded" class="cotizaciones">
+                <div class="cotizacion-card" *ngFor="let cotItem of _userDataService.userDataModel.cotizaciones.COTACAO_ITEMS">
+                    <!-- <div>
+                            <div class="plan-logo">
+                                <img [src]="getImg(cotItem.NM_PRODUTO)">
+                            </div>
+                            <p>
+                                {{cotItem.NM_PRODUTO}}
+                            </p>
+                            <div class="cot-details">
+                                <p *ngFor="let det of cotItem.DS_PRODUTO">{{det}}</p>
+                            </div>
+                    </div> -->
+                    <div>
+                        <app-cotizacion-body [nmCotizacion]='cotItem.NM_PRODUTO'></app-cotizacion-body>
+                    </div>
+                    <div class="cotizacion-btn" (click)="cotizacionSelected(cotItem.CD_COTACAO_ITEM)" 
+                    [style.background-color]="getBackgroundColor(cotItem.CD_COTACAO_ITEM)">
+                        <p style="color: white;">
+                        CONTRATAR POR ${{getPrecioString(cotItem.NM_PRODUTO)}}
+                    </p>
                     </div>
                 </div>
             </div>

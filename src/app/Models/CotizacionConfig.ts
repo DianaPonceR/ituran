@@ -3,4 +3,6 @@ export class CotizacionConfig {
     nombre: string
     img: string
     importes: string[]
+    tags: string[]
+    precioString: string
 }

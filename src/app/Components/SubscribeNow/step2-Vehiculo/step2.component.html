@@ -10,7 +10,7 @@
                 <div class="form-control col-md-4 col-sm-12">
                     <input  type="text" placeholder="PLACA" 
                             formControlName="placa"
-                            maxlength=7
+                            maxlength=7 style="text-transform: uppercase;"
                             onkeypress="return check(event)"
                             [ngClass]="{'is-invalid' : (stepForm.get('placa').touched || stepForm.get('placa').dirty) && !stepForm.get('placa').valid }"
                             >
@@ -18,7 +18,7 @@
                 <div class="form-control vin-form-control col-md-8 col-sm-12">
                     <input  type="text" placeholder="NÚMERO DE SERIE (VIN)" 
                             formControlName="vin"
-                            maxlength = 18
+                            maxlength = 18 style="text-transform: uppercase;"
                             onkeypress="return check(event)"
                             [ngClass]="{'is-invalid' : (stepForm.get('vin').touched || stepForm.get('vin').dirty) && !stepForm.get('vin').valid }"
                             >

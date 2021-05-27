@@ -24,7 +24,7 @@
                     maxlength=55
                     placeholder="Correo electrónico"
                     [ngClass]="{'is-invalid' : (stepForm.get('correo').touched || stepForm.get('correo').dirty) && !stepForm.get('correo').valid }"
-                    >
+                    >   
             <span><a>Consulta nuestra política de privacidad</a></span>
             <button
                     (click)="sendLead()"

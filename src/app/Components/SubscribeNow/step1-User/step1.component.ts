@@ -113,23 +113,30 @@ export class Step1Component implements OnInit {
       exterior: [this._userDataService.userDataModel.cliente.exterior, [Validators.required, Validators.minLength(1),validateEmptyString]],
       indicaciones: [this._userDataService.userDataModel.cliente.indicaciones]
     });
-    // solo dev
-    if(!environment.production) {
-      this.stepForm = this.fb.group({
-        nacimiento: new Date(1991,1,25),
-        rfc: 'PUAY910125',
-        clave: '194',
-        sexo: 'm',
-        cp: this._userDataService.userDataModel.cpData.cp,
-        estado: this._userDataService.userDataModel.cpData.estado,
-        ciudad: this._userDataService.userDataModel.cpData.ciudad,
-        municipio: this._userDataService.userDataModel.cpData.municipio,
-        colonia: this._userDataService.userDataModel.cpData.asentamiento,
-        calle: 'Casiopea',
-        exterior: 8,
-        indicaciones: this._userDataService.userDataModel.cliente.indicaciones,
+
+    if(this._userDataService.userDataModel.sepomexResponse.length === 1) {
+      var firstCol = this._userDataService.userDataModel.sepomexResponse[0].response.asentamiento;
+      fg.patchValue({
+        colonia: firstCol
       });
     }
+    // solo dev esto se ignora de cualquier manera
+    // if(!environment.production) {
+    //   this.stepForm = this.fb.group({
+    //     nacimiento: new Date(1991,1,25),
+    //     rfc: 'PUAY910125',
+    //     clave: '194',
+    //     sexo: 'm',
+    //     cp: this._userDataService.userDataModel.cpData.cp,
+    //     estado: this._userDataService.userDataModel.cpData.estado,
+    //     ciudad: this._userDataService.userDataModel.cpData.ciudad,
+    //     municipio: this._userDataService.userDataModel.cpData.municipio,
+    //     colonia: this._userDataService.userDataModel.cpData.asentamiento,
+    //     calle: 'Casiopea',
+    //     exterior: 8,
+    //     indicaciones: this._userDataService.userDataModel.cliente.indicaciones,
+    //   });
+    // }
     return fg;
   }
 

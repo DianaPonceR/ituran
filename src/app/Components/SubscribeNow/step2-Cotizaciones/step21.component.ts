@@ -37,9 +37,9 @@ export class Step21Component implements OnInit {
       }
     });
     // dev
-    if(!environment.production) {
-      // this._userDataService.userDataModel.cotizaciones = this.mockCotizacion()
-    }
+    // if(!environment.production) {
+    //   this._userDataService.userDataModel.cotizaciones = this.mockCotizacion()
+    // }
   }
 
   prev(){
@@ -59,6 +59,12 @@ export class Step21Component implements OnInit {
     return cot.img
   }
 
+  getPrecioString(name: string) {
+    var cot = this.cotizacionesConfig.find(x => x.nombre === name)
+    if(cot === undefined) return "349"
+    return cot.precioString
+  }
+
   cotizacionSelected(cotizacionId: number) {
     this.selected = cotizacionId
     this._userDataService.userDataModel.selectedCotizacion = this._userDataService.userDataModel.cotizaciones.COTACAO_ITEMS.find(x => x.CD_COTACAO_ITEM === cotizacionId);
@@ -67,7 +73,7 @@ export class Step21Component implements OnInit {
   }
 
   getBackgroundColor(cotizacionId: number): string {
-    return cotizacionId === this.selected ? '#ff9222' : 'rgba(14, 70, 101, 0.3)'
+    return cotizacionId === this.selected ? '#ff9222' : '#479acd'
   }
 
   mockCotizacion(): CotizacionResponseData {

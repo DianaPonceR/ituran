@@ -76,7 +76,7 @@
 p.front-p {
     font-size: 9pt;
     width: 90%;
-    height: 85px;
+    height: 105px;
     color: rgb(226, 226, 226);
 }
 
@@ -203,6 +203,7 @@ p.front-p {
     width: 70px;
     height: 15px;
     display: inline-block;
+    margin: 0 3px;
 }
 .chubb-icon img {
     width: 100%;
@@ -212,6 +213,7 @@ p.front-p {
     width: 25px;
     height: 15px;
     display: inline-block;
+    margin: 0 5px;
 }
 .hdi-icon img {
     width: 100%;

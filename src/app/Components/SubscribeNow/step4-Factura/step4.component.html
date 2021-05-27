@@ -18,6 +18,7 @@
                     <input  type="text" placeholder="Nombre(s)*" 
                             formControlName="nombre"
                             maxlength = 18
+                            (change)="RFCModificado()"
                             [ngClass]="{'is-invalid' : (stepForm.get('nombre').touched || stepForm.get('nombre').dirty) && !stepForm.get('nombre').valid }"
                             onkeypress="return isLetterKey(event)" onpaste="return isLetterKey(event)"
                             >
@@ -26,6 +27,7 @@
                     <input  type="text" placeholder="Apellido paterno" 
                             formControlName="paterno"
                             maxlength = 18
+                            (change)="RFCModificado()"
                             [ngClass]="{'is-invalid' : (stepForm.get('paterno').touched || stepForm.get('paterno').dirty) && !stepForm.get('paterno').valid }"
                             onkeypress="return isLetterKey(event)" onpaste="return isLetterKey(event)"
                             >
@@ -34,6 +36,7 @@
                     <input  type="text" placeholder="Apellido materno" 
                             formControlName="materno"
                             maxlength = 18
+                            (change)="RFCModificado()"
                             [ngClass]="{'is-invalid' : (stepForm.get('materno').touched || stepForm.get('materno').dirty) && !stepForm.get('materno').valid }"
                             onkeypress="return isLetterKey(event)" onpaste="return isLetterKey(event)"
                             >
@@ -50,13 +53,14 @@
                     <input  type="text" placeholder="Email" 
                             formControlName="correo"
                             [ngClass]="{'is-invalid' : (stepForm.get('correo').touched || stepForm.get('correo').dirty) && !stepForm.get('correo').valid }"
-                            maxlength = 20
+                            maxlength = 55
                             >
                 </div>
                 <div class="form-control date-control col-md-6 col-sm-12">
                     <label>Fecha de nacimiento</label>
                     <input  type="date" placeholder="" 
                             formControlName="nacimiento"
+                            (change)="RFCModificado()"
                             [ngClass]="{'is-invalid' : (stepForm.get('nacimiento').touched || stepForm.get('nacimiento').dirty) && !stepForm.get('nacimiento').valid }"
                             >
                     <i class="fa fa-calendar"></i>
@@ -64,12 +68,14 @@
                 <div class="form-control col-md-6 col-sm-12">
                     <input  type="text" placeholder="RFC" 
                             formControlName="rfc"
+                            disabled
                             [ngClass]="{'is-invalid' : (stepForm.get('rfc').touched || stepForm.get('rfc').dirty) && !stepForm.get('rfc').valid }"
                             >
                 </div>
                 <div class="form-control col-md-6 col-sm-12">
                     <input  type="text" placeholder="Homoclave" 
                             formControlName="clave"
+                            style="text-transform: uppercase;"
                             maxlength="3"
                             [ngClass]="{'is-invalid' : (stepForm.get('clave').touched || stepForm.get('clave').dirty) && !stepForm.get('clave').valid }"
                             >
@@ -136,7 +142,7 @@
                             >
                 </div>
             </div>
-            <h3 style="text-align: center;">IMPORTE</h3>
+            <!-- <h3 style="text-align: center;">IMPORTE</h3>
             <div *ngIf="importesLoaded" class="step-3"> 
                 <div *ngIf="importes.includes('vehiculoParticular')" class="form-control checkbox-control checkbox-card">
                     <label for="vehiculoParticular">Mi vehículo es de uso particular sin fines de lucro</label>
@@ -159,7 +165,7 @@
                             [ngClass]="{'is-invalid' : (stepForm.get('terminosCondiciones').touched || stepForm.get('terminosCondiciones').dirty) && !stepForm.get('terminosCondiciones').valid }"
                             >
                 </div>
-            </div>
+            </div> -->
             <div class="navigation"> 
                 <button (click)='prev()'>Anterior</button>
                 <button [disabled]="!stepForm.valid" (click)='save()'>Siguiente</button>

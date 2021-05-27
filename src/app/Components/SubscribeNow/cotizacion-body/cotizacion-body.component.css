@@ -1,0 +1,110 @@
+.flip-card-front, .flip-card-back {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 50px;
+    border: 1px solid #8b8b8b;
+    color: white;
+    background-color: rgba(6,69,96,0.5);
+    height: 460px;
+    margin: auto;
+}
+
+.plan-logo {
+    height: 100px;
+    margin-top: 20px;
+}   
+
+.plan-logo img {
+    width: 120px;
+}
+
+.plan-desc {
+    margin-top: 30px;
+    font-size: 12pt;
+    width: 80%;
+    margin-bottom: 30px;
+}
+
+p.front-p {
+    font-size: 8pt;
+    width: 90%;
+    height: 65px;
+    color: rgb(226, 226, 226);
+    text-align: center;
+}
+
+.front-p strong {
+    color: white;
+}
+
+.front-p span.green-price {
+    color: #80b447;
+}
+
+.front-p span.blue-price {
+    color: #46a6dd;
+}
+.flip-card-inner .plan-logo {
+    height: 130px;
+    margin-top: 30px;
+}   
+
+.plan-logo img {
+    width: 90px;
+}
+
+.plan-desc {
+    margin-top: 30px;
+    font-size: 12pt;
+    width: 80%;
+    margin-bottom: 30px;
+}
+
+.plan-tag {
+    display: flex;
+    flex-direction: row;
+    background-color: #80b447;
+    width: 150px;
+    font-size: 8pt;
+    justify-content: space-around;
+    align-items: center;
+    height: 40px;
+    border-radius: 7px;
+    margin-bottom: 10px;
+}
+
+.plan-tag img {
+    width: 100%;
+    height: fit-content;
+}
+.plan-tag p {
+    width: 100px;
+    margin: 0;
+}
+
+.plan-tags {
+    display: flex;
+    flex-direction: column;
+}
+
+.chubb-icon {
+    width: 70px;
+    height: 15px;
+    display: inline-block;
+    margin: 0 3px;
+}
+.chubb-icon img {
+    width: 100%;
+}
+
+.hdi-icon {
+    width: 25px;
+    height: 15px;
+    display: inline-block;
+    margin: 0 5px;
+}
+.hdi-icon img {
+    width: 100%;
+}

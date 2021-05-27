@@ -1,7 +1,8 @@
+import { DatePipe } from '@angular/common';
 import { Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { slideInOutAnimation } from 'src/app/Helpers/app.animations';
-import { HideLoader, ShowLoader, validateEmptyString, validateValueChanged } from 'src/app/Helpers/GeneralHelpers';
+import { HideLoader, RfcHelper, ShowLoader, validateEmptyString, validateValueChanged } from 'src/app/Helpers/GeneralHelpers';
 import { Factura } from 'src/app/Models/Factura';
 import { SepomexService } from 'src/app/Services/sepomex.service';
 import { UserDataService } from 'src/app/Services/user-data.service';
@@ -23,7 +24,7 @@ export class Step4Component implements OnInit {
   importes: string[] = []
   importesLoaded = false
 
-  constructor(private fb: FormBuilder, private sepomex: SepomexService, public _userDataService: UserDataService) { }
+  constructor(private fb: FormBuilder, private sepomex: SepomexService, public _userDataService: UserDataService, public datepipe: DatePipe) { }
 
   ngOnInit(): void {
     this._userDataService.getSessionState();
@@ -127,6 +128,9 @@ export class Step4Component implements OnInit {
           estado: cp.response.estado,
           ciudad: cp.response.ciudad,
           municipio: cp.response.municipio,
+          calle: '',
+          exterior: '',
+          indicaciones: ''
           // colonia: cp.response.asentamiento
         });
         // if(cp.response.estado === 'Ciudad de México'){
@@ -169,9 +173,9 @@ export class Step4Component implements OnInit {
         calle: ['', [Validators.required, Validators.minLength(2),validateEmptyString]],
         exterior: [null, [Validators.required, Validators.minLength(1),validateEmptyString]],
         indicaciones: [''],
-        vehiculoParticular: [false,[Validators.requiredTrue]],
-        vehiculoSinSiniestro: [false,[Validators.requiredTrue]],
-        terminosCondiciones: [false,[Validators.requiredTrue]]
+        // vehiculoParticular: [false,[Validators.requiredTrue]],
+        // vehiculoSinSiniestro: [false,[Validators.requiredTrue]],
+        // terminosCondiciones: [false,[Validators.requiredTrue]]
       });
     }
     else {
@@ -191,12 +195,29 @@ export class Step4Component implements OnInit {
         colonia: [null, [Validators.required, validateValueChanged('0'),validateEmptyString]],
         calle: ['', [Validators.required, Validators.minLength(2),validateEmptyString]],
         exterior: [null, [Validators.required, Validators.minLength(1),validateEmptyString]],
-        indicaciones: [''],
+        indicaciones: ['']
         // vehiculoParticular: [false,[Validators.requiredTrue]],
-        vehiculoSinSiniestro: [false,[Validators.requiredTrue]],
-        terminosCondiciones: [false,[Validators.requiredTrue]]
+        // vehiculoSinSiniestro: [false,[Validators.requiredTrue]],
+        // terminosCondiciones: [false,[Validators.requiredTrue]]
       });
     }
     return fg
+  }
+
+  RFCModificado () {
+    var nacimiento: Date = this.stepForm.get('nacimiento').value;
+    var nombre = this.stepForm.get('nombre').value;
+    var paterno = this.stepForm.get('paterno').value;
+    var materno = this.stepForm.get('materno').value;
+
+    var rfcHelper = new RfcHelper();
+    // genera rfc y homoclave
+    var rfcClave = rfcHelper.itm_fn_RFC(nombre, paterno, materno, this.datepipe.transform(nacimiento, 'yyyy/MM/dd') );
+    var clave = rfcClave.substring(10, 13);
+    var rfc = rfcClave.substring(0, 10);
+    this.stepForm.patchValue({
+      rfc: rfc,
+      clave: clave
+    });
   }
 }

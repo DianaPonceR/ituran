@@ -99,11 +99,11 @@ export class Step5Component implements OnInit {
 
 
   getPedido(tipoPago: number) {
-    //dev
+    // //dev
     // HideLoader()
     // this.showMessage('pagando');
     // return;
-    //end dev
+    // //end dev
 
     var pedido = this.prepararPedido(tipoPago);
     console.log('***PEDIDO REQUEST***');
@@ -442,11 +442,11 @@ export class Step5Component implements OnInit {
   }
 
   openLink(){
-    //dev
+    // //dev
     // this._userDataService.userDataModel.ituranGatewayPagoResponse = new GatewayCheckoutResponse();
     // this._userDataService.userDataModel.ituranGatewayPagoResponse.data = new GatewayCheckoutResponseData();
     // this._userDataService.userDataModel.ituranGatewayPagoResponse.data.url = 'https://google.com';
-    //end dev
+    // //end dev
 
 
     window.scrollTo(0, 0);
@@ -464,11 +464,11 @@ export class Step5Component implements OnInit {
   }
 
   continuar(){
-    //dev
+    // //dev
     // ShowLoader();
     // this.continuar_next();
     // return;
-    //end dev
+    // //end dev
 
     this.status_msg = null;
     // document.getElementById('mensaje_pagando').style.display = 'none';
@@ -508,7 +508,7 @@ export class Step5Component implements OnInit {
         }
         console.log(this.status_msg);
         // document.getElementById("exampleModal").classList.add("show");
-        this.continuar_proceso();
+        // this.continuar_proceso();
       },
       error => {
         console.log(error);

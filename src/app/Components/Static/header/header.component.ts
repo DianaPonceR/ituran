@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
+import { UserDataService } from 'src/app/Services/user-data.service';
 
 @Component({
   selector: 'app-header',
@@ -9,13 +10,18 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(public _userDataService: UserDataService) { }
 
   ngOnInit(): void {
   }
 
   goHome(){
-    this.router.navigate(['/home'])
+    this.finalizar();
+  }
+
+  finalizar() {
+    this._userDataService.clearSession();
+    this._userDataService.goToForm('inicial');
   }
 
 

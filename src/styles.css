@@ -80,8 +80,8 @@ input, select {
 }
 input[type="date"]::-webkit-inner-spin-button,
 input[type="date"]::-webkit-calendar-picker-indicator {
-    display: none;
-    -webkit-appearance: none;
+    /* display: none;
+    -webkit-appearance: none; */
 }
 .date-control label {
     color: white;
@@ -89,15 +89,24 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     width: min-content;
     font-size: 10pt;
 }
+
+.date-control i {
+    right: 15% !important;
+}
+
 input:hover, select:hover {
     border-color: white;
 }
 select option {
-    background-color: white;
-    color: black;
+    background-color: rgb(0, 75, 122);
+    color: white;
     margin-top: 5px;
     font-family: PFBeauSansPro !important;
     font-size: 12pt;
+}
+select option:hover {
+    background-color: #ff9222;
+    color: rgb(0, 75, 122);
 }
 .form-control i {
     width: 0px;
@@ -170,6 +179,12 @@ select option {
     }
     input, select {
         width: 100%;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+	.date-control i {
+        /* right: 70px !important; */
     }
 }
 
