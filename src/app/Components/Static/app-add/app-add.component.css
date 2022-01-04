@@ -17,3 +17,39 @@
 img {
     width: 100%;
 }
+
+a {
+    position: absolute;
+    /* background-color: red; */
+    width: 12%;
+    height: 40px;
+}
+
+a.appStore {
+    bottom: 18%;
+    left: 34%;
+}
+
+a.playStore {
+    bottom: 10%;
+    left: 34%;
+}
+
+
+@media only screen and (max-width: 1024px) {
+    a {
+        height: 29px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    a {
+        height: 17px;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    a {
+        height: 13px;
+    }
+}

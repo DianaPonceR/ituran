@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  sepomexToken: '5d9990a9-205b-47f1-bcd1-799e1ccf72c2',
+  sepomexToken: '3d3475bb-9071-4093-bdab-f10c325be137',
   ituranApiBaseUrl: 'https://partnergtw-training.ituran.com.mx/api/v3/',
   a: 'teste.producao',
   b: 'SUPERUSUARIO280190',

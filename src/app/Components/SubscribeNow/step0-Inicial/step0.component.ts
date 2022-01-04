@@ -45,8 +45,8 @@ export class Step0Component implements OnInit {
     this.stepForm = this.setFormGroup();
     this.getVehiclesCatalog();
     
-    // only dev
-    // if(true) return
+    // // only dev
+    // // if(true) return
     // if(!environment.production){
     //   this.stepForm.patchValue({
     //     nombre: 'Yuri',
@@ -58,7 +58,7 @@ export class Step0Component implements OnInit {
     //   });
     //   this.LeadDataChanged();
     // }
-    // end dev
+    // // end dev
   }
 
   save():void {
@@ -217,12 +217,12 @@ export class Step0Component implements OnInit {
     }
     if (selected === 'marca' && this.searchedModelos){
       this.stepForm.patchValue({
-        anio: null,
+        // anio: null,
         modelo: null
       });
       this.modelos = null;
       this.searchedModelos = false;
-      return
+      //return
     }
 
     if(marca != null && anio != null) {
@@ -280,7 +280,7 @@ export class Step0Component implements OnInit {
       paterno: ['', [Validators.required, Validators.minLength(2),validateEmptyString]],
       materno: ['', [Validators.required, Validators.minLength(2),validateEmptyString]],
       telefono: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(10),validateEmptyString]],
-      correo: ['', [Validators.required, Validators.email,validateEmptyString]],
+      correo: ['', [Validators.required, validateEmptyString, Validators.pattern(/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i)]],
       cp: ['', [Validators.required, Validators.minLength(5)]],
       anio: [null, [Validators.required, validateValueChanged('Seleccione un año'),validateEmptyString]],
       marca: [null, [Validators.required, validateValueChanged('Seleccione una marca'),validateEmptyString]],

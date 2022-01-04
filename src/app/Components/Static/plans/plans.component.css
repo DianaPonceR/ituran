@@ -70,7 +70,7 @@
 
 /* Style the front side (fallback if image is missing) */
 .flip-card-front {
-    
+
 }
 
 p.front-p {
@@ -94,7 +94,7 @@ p.front-p {
 
 /* Style the back side */
 .flip-card-back {
-    
+
     transform: rotateY(180deg);
 }
 
@@ -131,13 +131,13 @@ p.front-p {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 28%;
+    width: 23%;
 }
 
 .flip-card-inner .plan-logo {
     height: 130px;
     margin-top: 30px;
-}   
+}
 
 .plan-logo img {
     width: 120px;
@@ -256,6 +256,11 @@ p.front-p {
     .card-container:nth-child(3) {
         margin-top: 60px;
     }
+
+    .card-container:nth-child(4) {
+      margin-top: 60px;
+    }
+
     .general-1 {
         margin-bottom: 60px;
     }

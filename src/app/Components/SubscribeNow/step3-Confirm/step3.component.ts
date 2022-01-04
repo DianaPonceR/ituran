@@ -26,17 +26,17 @@ export class Step3Component implements OnInit {
     if(this.importes.includes('vehiculoParticular')){
       this.stepForm = this.fb.group({
         facturar: this._userDataService.userDataModel.facturar,
-        vehiculoParticular: [false, [Validators.requiredTrue]],
-        vehiculoSinSiniestro: [false, [Validators.requiredTrue]],
-        terminosCondiciones: [false, [Validators.requiredTrue]]
+        vehiculoParticular: [this._userDataService.userDataModel.importe.vehiculoParticular, [Validators.requiredTrue]],
+        vehiculoSinSiniestro: [this._userDataService.userDataModel.importe.vehiculoSiniestro, [Validators.requiredTrue]],
+        terminosCondiciones: [this._userDataService.userDataModel.importe.terminosCondiciones, [Validators.requiredTrue]]
       });
     }
     else {
       this.stepForm = this.fb.group({
         facturar: this._userDataService.userDataModel.facturar,
         // vehiculoParticular: [false, [Validators.requiredTrue]],
-        vehiculoSinSiniestro: [false, [Validators.requiredTrue]],
-        terminosCondiciones: [false, [Validators.requiredTrue]]
+        vehiculoSinSiniestro: [this._userDataService.userDataModel.importe.vehiculoSiniestro, [Validators.requiredTrue]],
+        terminosCondiciones: [this._userDataService.userDataModel.importe.terminosCondiciones, [Validators.requiredTrue]]
       });
     }
   }
@@ -49,8 +49,25 @@ export class Step3Component implements OnInit {
     if(!this.stepForm.valid) {
       return
     }
+    var vehiculoParticular: any;
+    var vehiculoSinSiniestro: any;
+    var terminosCondiciones: any;
     var facturaCheck = this.stepForm.get('facturar').value;
+    if(this.importes.includes('vehiculoParticular')){
+      var vehiculoParticular = this.stepForm.get('vehiculoParticular').value;
+      var vehiculoSinSiniestro = this.stepForm.get('vehiculoSinSiniestro').value;
+      var terminosCondiciones = this.stepForm.get('terminosCondiciones').value;
+    }
+    else {
+      var vehiculoSinSiniestro = this.stepForm.get('vehiculoSinSiniestro').value;
+      var terminosCondiciones = this.stepForm.get('terminosCondiciones').value;
+    }
+
+
     this._userDataService.userDataModel.facturar = facturaCheck;
+    this._userDataService.userDataModel.importe.terminosCondiciones = terminosCondiciones;
+    this._userDataService.userDataModel.importe.vehiculoParticular = vehiculoParticular;
+    this._userDataService.userDataModel.importe.vehiculoSiniestro = vehiculoSinSiniestro;
     if(facturaCheck) {
       this._userDataService.goToForm('factura');
     }

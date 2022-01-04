@@ -3,8 +3,8 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 @Component({
   selector: 'app-welcome-banner',
   templateUrl: './welcome-banner.component.html',
-  styleUrls: ['./welcome-banner.component.css'],
-  encapsulation: ViewEncapsulation.ShadowDom 
+  styleUrls: ['./welcome-banner.component.css']
+  // ,encapsulation: ViewEncapsulation.ShadowDom 
 })
 export class WelcomeBannerComponent implements OnInit {
 

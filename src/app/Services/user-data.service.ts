@@ -90,6 +90,7 @@ export class UserDataService {
   clearSession() {
     this.step = 1;
     this.currentForm = 'inicial';
+    localStorage.clear();
     this.userDataModel = new UserDataModel();
   }
 }

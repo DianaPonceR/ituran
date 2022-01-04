@@ -1,6 +1,7 @@
 import { Cliente } from "./Cliente";
 import { CotizacionConfig } from "./CotizacionConfig";
 import { Factura } from "./Factura";
+import { Importe } from "./Importe";
 import { Inicial } from "./Inicial";
 import { CotizacionResponseData, ItemCotizacion } from "./Response/CotizacionResponse";
 import { GatewayCheckoutResponse, GatewayTokenResponse } from "./Response/GatewayResponse";
@@ -26,6 +27,7 @@ export class UserDataModel{
     public ituranGatewayPagoResponse: GatewayCheckoutResponse
     public ituranGatewayMensual: CobrancaStatusPedido;
     public gatewayTokenResponse: GatewayTokenResponse;
+    public importe: Importe;
 
     constructor() {
         this.inicial = new Inicial();
@@ -43,5 +45,6 @@ export class UserDataModel{
         this.ituranGatewayPagoResponse = new GatewayCheckoutResponse();
         this.ituranGatewayMensual = new CobrancaStatusPedido();
         this.gatewayTokenResponse = new GatewayTokenResponse();
+        this.importe = new Importe();
     }
   }

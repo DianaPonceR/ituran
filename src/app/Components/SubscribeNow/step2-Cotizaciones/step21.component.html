@@ -5,6 +5,7 @@
         <div class="step" [style.background-image]="'url(assets/images/flujo-bg.png'">
             <div class="cotizaciones-message">
                 <h4>Selecciona la cotización de tu preferencia</h4>
+                <p>Haz clic en el botón de la cotización de tu preferencia</p>
             </div>
             <!-- <div *ngIf="cotizacionesConfigLoaded" class="cotizaciones">
                 <div class="cotizacion-card" *ngFor="let cotItem of _userDataService.userDataModel.cotizaciones.COTACAO_ITEMS">
@@ -36,20 +37,20 @@
                                 <p *ngFor="let det of cotItem.DS_PRODUTO">{{det}}</p>
                             </div>
                     </div> -->
-                    <div>
-                        <app-cotizacion-body [nmCotizacion]='cotItem.NM_PRODUTO'></app-cotizacion-body>
-                    </div>
                     <div class="cotizacion-btn" (click)="cotizacionSelected(cotItem.CD_COTACAO_ITEM)" 
                     [style.background-color]="getBackgroundColor(cotItem.CD_COTACAO_ITEM)">
                         <p style="color: white;">
                         CONTRATAR POR ${{getPrecioString(cotItem.NM_PRODUTO)}}
                     </p>
                     </div>
+                    <div>
+                        <app-cotizacion-body [nmCotizacion]='cotItem.NM_PRODUTO'></app-cotizacion-body>
+                    </div>
                 </div>
             </div>
             <div class="navigation"> 
                 <button (click)='prev()'>Anterior</button>
-                <button [disabled]="!userSelectedCotizacion" (click)='save()'>Siguiente</button>
+                <button [disabled]="!userSelectedCotizacion" (click)='save()' id="btn-sig-cotizacion">Siguiente</button>
             </div>
         </div>
     

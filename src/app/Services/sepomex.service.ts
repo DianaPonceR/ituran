@@ -9,10 +9,24 @@ import { SepomexResponse } from '../Models/SepomexResponse';
 })
 export class SepomexService {
 
-  baseUrl: string = 'https://api-sepomex.hckdrk.mx/query/info_cp/';
-  constructor(private _http: HttpClient) { }
+  baseUrl: string = 'https://api.copomex.com/query/info_cp/';
+  public httpOptions: any;
+  public headers: any;
+  public options: any;
+
+  constructor(private _http: HttpClient) {
+    this.options = environment.options;
+    this.headers = new HttpHeaders().set('Content-Type', this.options);
+    
+    this.httpOptions = {
+      headers: new HttpHeaders({ 
+        'Access-Control-Allow-Origin':'*',
+        'Content-Type': 'application/json'
+      })
+    };
+   }
   //CONSULTA DE CP
   GetCPInfo(cp): Observable<SepomexResponse[]>{
-    return this._http.get<SepomexResponse[]>(this.baseUrl + cp + '?token=' + environment.sepomexToken);
+    return this._http.get<SepomexResponse[]>(this.baseUrl + cp + '?token=' + environment.sepomexToken); //, { headers: this.httpOptions.headers }
   }
 }

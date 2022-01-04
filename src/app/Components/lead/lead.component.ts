@@ -20,9 +20,9 @@ export class LeadComponent implements OnInit {
     this.stepForm = this.fb.group({
       nombre: ['', [Validators.required, Validators.minLength(3),validateEmptyString]],
       telefono: ['', [Validators.required, Validators.minLength(10),validateEmptyString]],
-      correo: ['', [Validators.email]]
+      correo: ['', [Validators.email, Validators.pattern(/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i)]]
     });
-  }
+  } // +\\.[a-z]{2,4}$/i
 
   sendLead():void {
     var nombreLead = this.stepForm.get('nombre').value;
@@ -50,15 +50,27 @@ export class LeadComponent implements OnInit {
         console.log('**LEAD RESPONSE**')
         console.log(response)
         HideLoader();
+        this.ClearLead();
         Swal.fire('¡Gracias!', "Hemos recibido tus datos, en breve nuestro equipo se pondrá en contacto contigo.", 'success');
       },
       error: err => {
         console.log('**LEAD ERROR RESPONSE**')
         console.log(err);
         HideLoader();
+        this.ClearLead();
         Swal.fire('Por el momento no podemos completar el proceso', "Contactanos al 800 911 9898", 'error');
       }
     });
+  }
+
+  ClearLead(){
+    this.stepForm.patchValue({
+      nombre: '',
+      telefono: '', 
+      correo : ''
+    });
+    this.stepForm.markAsPristine();
+    this.stepForm.markAsUntouched();
   }
 
 }

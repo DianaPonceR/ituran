@@ -19,8 +19,8 @@
 .cotizaciones-message {
     width: 100%;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     margin-top: 40px;
 }
 
@@ -54,7 +54,7 @@
     align-items: center;
 }
 
-.cotizacion-card>div:nth-child(2) {
+.cotizacion-card>div:nth-child(1) {
     /* background-color: rgba(14, 70, 101, 0.5); */
     /* height: 80px; */
     background-color: #479acd;
@@ -73,18 +73,19 @@
     margin-bottom: 20px;
 }
 
-.cotizacion-card>div:nth-child(2):hover {
+.cotizacion-card>div:nth-child(1):hover {
     transform: scale(1.1);
+    cursor: pointer;
 }
 
-.cotizacion-card>div:nth-child(2) p {
+.cotizacion-card>div:nth-child(1) p {
     font-size: 10pt;
     width: 90%;
     margin: 0;
     font-size: 12pt;
 }
 
-.cotizacion-card>div p:nth-child(2) {
+.cotizacion-card>div p:nth-child(1) {
     margin-top: 10px;
 }
 

@@ -126,7 +126,7 @@ export class Step5Component implements OnInit {
           allowOutsideClick: false
         }).then((result) => {
           if (result.isConfirmed) {
-            this._userDataService.goToForm('inicial');
+            this.finalizar();
           }
         });
       }
@@ -144,19 +144,25 @@ export class Step5Component implements OnInit {
     var item: ProductoItemEscogido[];
 
     pedido.GUID_COTACAO = cotizacionesResponse.GUID_COTACAO
-
     // llena items escogidos
-    cotizacionesResponse.COTACAO_ITEMS.forEach(coti => {
-      if(coti.NM_PRODUTO === "ITURAN CON SEGUROS MEXICO") {
-        this.serviceGPS = null;
-        item = [
-          {
-            CD_COTACAO_ITEM: coti.CD_COTACAO_ITEM,
-            VL_COMISSAO: ''
-          }
-        ]
+    // cotizacionesResponse.COTACAO_ITEMS.forEach(coti => {
+    //   if(coti.NM_PRODUTO === "ITURAN CON SEGUROS MEXICO") {
+    //     this.serviceGPS = null;
+    //     item = [
+    //       {
+    //         CD_COTACAO_ITEM: coti.CD_COTACAO_ITEM,
+    //         VL_COMISSAO: ''
+    //       }
+    //     ]
+    //   }
+    // })
+    item = [
+      {
+        CD_COTACAO_ITEM: selectedCotizacion.CD_COTACAO_ITEM,
+        VL_COMISSAO: ''
       }
-    })
+    ]
+
     // llena objeto cobrança
     var cobranca: EnderecoCobranca = {
       ENDERECO_COMPLETO: cliente.calle,
@@ -290,6 +296,7 @@ export class Step5Component implements OnInit {
           pedido.ENDERECO_CLIENTE = infoc2
         }
     }
+    debugger
     return pedido;
   }
 
