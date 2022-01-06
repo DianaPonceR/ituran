@@ -38,6 +38,7 @@ import { RouterModule } from '@angular/router';
 import { AlphabetOnlyDirective } from './Helpers/alphabet-only.directive';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { CotizacionBodyComponent } from './Components/SubscribeNow/cotizacion-body/cotizacion-body.component';
+import { WelcomeSliderComponent } from './Components/Static/welcome-slider/welcome-slider.component';
 
 @NgModule({
   declarations: [
@@ -69,7 +70,8 @@ import { CotizacionBodyComponent } from './Components/SubscribeNow/cotizacion-bo
     Step21Component,
     ProcesoFinalizadoComponent,
     AlphabetOnlyDirective,
-    CotizacionBodyComponent
+    CotizacionBodyComponent,
+    WelcomeSliderComponent
   ],
   imports: [
     BrowserModule,

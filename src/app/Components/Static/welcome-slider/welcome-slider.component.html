@@ -1,0 +1,18 @@
+<div class="iw-container iw-welcome-slider">
+  <ngb-carousel #carousel *ngIf="slides" interval="3000">
+    <ng-template *ngFor="let slide of slides" ngbSlide>
+      <div class="carousel-caption"></div>
+      <!--<div class="carousel-welcome-container">-->
+        <div class="picsum-img-wrapper" ngClass="{{slide.class}}">
+          <img [src]="slide.imageUrl" alt="My image description">
+        </div>
+
+      <!--</div>-->
+    </ng-template>
+  </ngb-carousel>
+
+  <div class="lead-container">
+    <app-lead></app-lead>
+  </div>
+  <!--</div>-->
+</div>
