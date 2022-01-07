@@ -40,6 +40,7 @@ select {
     margin-right: 4%;
     margin-top: 40px;
     transition: 00.3s;
+    z-index: 1;
 }
 
 .card:hover {
