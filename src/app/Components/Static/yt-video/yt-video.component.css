@@ -23,38 +23,46 @@
     background-position: bottom;
     background-repeat: no-repeat;
   }
-  
+
 .watch {
     width: 100%;
     height: 700px;
 }
-  
+
   .watch img {
     margin-top: 150px;
     cursor: pointer;
   }
-  
+
 .watch .reproductor {
     width: 100%;
     height: 100%;
     padding: 0 !important;
 }
-  
+
   .video_ituran {
     width: 100%;
     height: 100%;
   }
 
+#image-iframe:hover {
+  cursor: pointer;
+}
+
+#image-iframe img {
+  margin-top: 0px;
+}
+
   @media only screen and (max-width: 1024px) {
-	
+
   }
-  
+
   @media only screen and (max-width: 768px) {
       .watch {
         height: 590px;
       }
   }
-  
+
   @media only screen and (max-width: 485px) {
       .watch {
         height: 330px;

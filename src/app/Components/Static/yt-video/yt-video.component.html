@@ -5,9 +5,14 @@
         <img src="assets/info/data.png" class="w-100" alt="">
       </div> -->
       <div class="col-md-12 text-center watch">
-        <img src="assets/icon/vconoce.png" id="play-video" alt="" (click)="reproducir()" *ngIf="reproductor == false">
-        <div class="reproductor" *ngIf="reproductor == true">
-          <iframe src="https://www.youtube.com/embed/tYuoNRbFaIY?rel=0" id="video_ituran" controls="false" class="video_ituran" frameborder="0"></iframe>
+        <!--<img src="assets/icon/vconoce.png" id="play-video" alt="" (click)="reproducir()" *ngIf="reproductor == false">-->
+        <div class="reproductor">
+          <div id="image-iframe" (click)="showVideo($event)">
+            <img src="assets/images/ituran-youtube.webp" alt="ituran youtube">
+          </div>
+
+          <iframe *ngIf="show_iframe" src="https://www.youtube.com/embed/tYuoNRbFaIY?rel=0" id="video_ituran" controls="false" class="video_ituran" frameborder="0"></iframe>
+
         </div>
       </div>
     </div>
