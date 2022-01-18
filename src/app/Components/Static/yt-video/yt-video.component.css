@@ -38,6 +38,9 @@
     width: 100%;
     height: 100%;
     padding: 0 !important;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 
   .video_ituran {
@@ -45,12 +48,13 @@
     height: 100%;
   }
 
-#image-iframe:hover {
+.image-yt:hover {
   cursor: pointer;
 }
 
-#image-iframe img {
+.image-yt img {
   margin-top: 0px;
+  max-width: 100%;
 }
 
   @media only screen and (max-width: 1024px) {
