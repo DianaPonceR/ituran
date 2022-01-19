@@ -189,6 +189,13 @@ p.front-p {
     font-size: 21pt;
     padding: 0 5%;
 }
+
+.price-tag-phone {
+  text-align: center;
+  text-decoration: none;
+  padding-top: 5px;
+}
+
 .price-tag:hover {
     background-color: #77c6f7;
 }
